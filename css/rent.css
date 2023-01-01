@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
+:root {
+  --font-color: #ff5403;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+h1,
+legend {
+  color: var(--font-color);
+}
+
+legend {
+  font-weight: bold;
+}
+
+form {
+  padding-bottom: 30px;
+}
+
+fieldset {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+label {
+  margin: 30px 0px;
+}
+
+label[for]:hover {
+  cursor: pointer;
+}
+
+input {
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[type="email"],
+select {
+  border: none;
+  padding: 10px 10px;
+  border: 1px solid #ff5403;
+  border-radius: 5px;
+}
+
+select {
+  margin: 10px;
+}
+
+.display-block {
+  display: block;
+  margin: 0;
+}
+
+.form-group {
+  display: inline;
+  float: left;
+  padding: 10px 30px;
+}
+
+.block-form {
+  float: none;
+}
+
+.block-form .form-group {
+  display: block;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.radio-group {
+  padding: 10px;
+  display: inline;
+}
+
+.radio-group label {
+  padding: 10px;
+  display: inline;
+}
+
+.form-group input[type="text"],
+.form-group input[type="radio"],
+.form-group input[type="checkbox"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group input[type="range"],
+select {
+  margin-left: 30px;
+}
+
+#gpa-range {
+  color: #ff5403;
+  font-weight: bold;
+  padding: 0 10px;
+  position: relative;
+  top: -5px;
+  left: 10px;
+}
+
+option:checked {
+  background: #ff5403;
+  color: #fff;
+}
+
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 15px 0;
+  height: 200px;
+  padding: 10px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  text-transform: uppercase;
+  color: #ff5403;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-left: 30px;
+  border: 2px solid #ff5403;
+  background: #fff;
+  position: relative;
+  top: 0;
+  left: 0;
+  box-shadow: 4px 4px 0px #ff5403;
+  transition: all 300ms;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  top: 4px;
+  left: 4px;
+  box-shadow: 0px 0px 0px #ff5403;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 583px) {
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .form-group {
+    display: block;
+    float: none;
+    padding: 0;
+    text-align: left;
+    padding: 10px 0px;
+  }
+
+  .form-group label {
+    padding-bottom: 10px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="radio"],
+  .form-group input[type="checkbox"],
+  .form-group input[type="date"],
+  .form-group input[type="time"],
+  .form-group input[type="number"],
+  .form-group input[type="email"],
+  .form-group input[type="range"],
+  select {
+    margin-left: 0px;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="time"],
+  input[type="number"],
+  input[type="email"],
+  select {
+    width: 100%;
+    margin: 0;
+  }
+
+  textarea {
+    width: 100%;
+  }
+}
