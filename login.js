@@ -49,7 +49,7 @@ function register () {
   email = document.getElementById('email').value
   password = document.getElementById('password').value
   full_name = document.getElementById('full_name').value
-  favourite_song = document.getElementById('favourite_song').value
+  username = document.getElementById('username').value
   milk_before_cereal = document.getElementById('milk_before_cereal').value
 
   // Validate input fields
@@ -58,7 +58,7 @@ function register () {
     return
     // Don't continue running the code
   }
-  if (validate_field(full_name) == false || validate_field(favourite_song) == false || validate_field(milk_before_cereal) == false) {
+  if (validate_field(full_name) == false || validate_field(username) == false || validate_field(milk_before_cereal) == false) {
     alert('One or More Extra Fields is Outta Line!!')
     return
   }
@@ -76,9 +76,10 @@ function register () {
     var user_data = {
       email : email,
       full_name : full_name,
-      favourite_song : favourite_song,
+      username : username,
       milk_before_cereal : milk_before_cereal,
-      last_login : Date.now()
+      last_login : Date.now(),
+      rank: 111
     }
 
     // Push to Firebase Database

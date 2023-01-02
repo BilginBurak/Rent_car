@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <style>
+        :root {
+            --main-color: #d4471c;
+            --black-color: #121212;
+            --border: 0.1rem solid rgba(255, 255, 255, 0.4);
+        }
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #050c14;
+
+        }
+
+        body img {
+            background-color: #0550ae;
+            width: 100%;
+            object-fit: cover;
+
+        }
+
+        .SignUpForm {
+            width: 80%;
+            height: 70%;
+            padding: 30px;
+            text-align: center;
+            /*background: url(./signUpBackGround.jpg);   */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            border: 1px solid rgb(73, 61, 61);
+            background-color: var(--black-color);
+
+
+
+        }
+
+        .SignUpForm h1 {
+            color: white;
+            margin-top: 25px;
+            padding-bottom: 25px;
+            font-size: 50px;
+        }
+
+        .SignUpForm input {
+            display: block;
+            width: 30%;
+            height: 50px;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            border: none;
+
+        }
+
+        .SignUpForm .txt {
+            margin: 25px 0px;
+            border-radius: 10px;
+        }
+
+        .SignUpFormz .btn {
+            color: white;
+            font-size: 15px;
+            border-radius: 40px 10px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            background-color: green;
+            cursor: pointer;
+            transition: 0.5s;
+            display: block;
+
+        }
+
+        .btn:hover {
+            background-color: gold;
+            color: black;
+            transform: scale(0.90);
+
+        }
+
+        .SignUpForm p {
+            color: white;
+        }
+
+        .SignUpForm a {
+            color: blue;
+        }
+
+        .input_values {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+        }
+
+        .input_btns {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+        }
+
+        .SignUpFormz {
+
+            display: flex;
+            flex-direction: column;
+            align-content: space-between;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+    </style>
+</head>
+<!--
+
+    Araba ismi = textbox
+    Araba model = number imput
+    Araba fiyat = Number
+    Durum = Radiobutton (emannette-dükkanda)
+    Yakıt tipi - text box
+    Katogori = radio button
+    fites tipi = radioo button
+    
+-->
+
+
+<body>
+
+    <div class="SignUpForm" id="mainform">
+
+        <div class="SignUpFormz" id="form">
+            <div class="input_values">
+
+                <input type="number" placeholder="Car ID" class="txt" id="ID_car" name="ID_car">
+                <input type="text" placeholder="Car Name" class="txt" id="carname" name="carname">
+                <input type="text" placeholder="Year" class="txt" id="year" name="year">
+                <input type="text" placeholder="Price" class="txt" id="price" name="price">
+
+                <select style="width: 30%; text-align: center;" class="txt" id="category">
+                    <option value="none">Please select car category</option>
+                    <option value="Economy">Economy</option>
+                    <option value="Comfort">Comfort</option>
+                    <option value="Prestige">Prestige</option>
+                    <option value="Luxury">Luxury</option>
+                    <option value="Van">Van/Panelvan</option>
+                </select>
+
+                <select style="width: 30%; text-align: center;" class="txt" id="fuelType">
+                    <option value="none">Please select a fuel type</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Oil">Oil</option>
+                    <option value="LPG">LPG</option>
+                </select>
+
+
+
+                <input type="text" placeholder="Username" class="txt" id="username" name="username">
+                <input type="text" placeholder="Username" class="txt" id="username" name="username">
+
+            </div>
+
+            <div class="input_btns">
+
+                <input type="submit" id="btnGet" name="btnGet" value="get" class="btn" />
+                <input type="submit" value="DELETE" class="btn" id="btnDelete" name="btnDelete">
+                <input type="submit" value="ADD" class="btn" id="btnAdd" name="btnAdd">
+                <input type="submit" value="Update" class="btn" id="btnUpdate" name="btnUpdate">
+            </div>
+
+
+            <input type="submit" value="Clean Form" class="btn" id="btnClean" name="btnClean">
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+    <script src="/car_management.js" type="module"></script>
+    <script src="/firebase.js"></script>
+
+
+</body>
+
+</html>
