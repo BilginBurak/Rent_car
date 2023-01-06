@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    
+
+    <style>
+        :root {
+            --main-color: #d4471c;
+            --black-color: #121212;
+            --border: 0.1rem solid rgba(255, 255, 255, 0.4);
+        }
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #050c14;
+
+        }
+
+        body img {
+            background-color: #0550ae;
+            width: 100%;
+            object-fit: cover;
+
+        }
+
+        .SignUpForm {
+            width: 80%;
+            height: 70%;
+            padding: 30px;
+            text-align: center;
+            /*background: url(./signUpBackGround.jpg);   */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            border: 1px solid rgb(73, 61, 61);
+            background-color: var(--black-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
+        .SignUpForm h1 {
+            color: white;
+            margin-top: 25px;
+            padding-bottom: 25px;
+            font-size: 50px;
+        }
+
+        .SignUpForm input {
+            display: block;
+            width: 30%;
+            height: 50px;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            border: none;
+
+        }
+
+        .SignUpForm .txt {
+            margin: 25px 0px;
+            border-radius: 10px;
+        }
+
+        .SignUpFormz .btn {
+            color: white;
+            font-size: 15px;
+            border-radius: 40px 10px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            background-color: green;
+            cursor: pointer;
+            transition: 0.5s;
+            display: block;
+
+        }
+
+        .btn:hover {
+            background-color: gold;
+            color: black;
+            transform: scale(0.90);
+
+        }
+
+        .SignUpForm p {
+            color: white;
+        }
+
+        .SignUpForm a {
+            color: blue;
+        }
+
+        .input_values {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+        }
+
+        .input_btns {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+        }
+
+        .SignUpFormz {
+
+            display: flex;
+            flex-direction: column;
+            align-content: space-between;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #desarea {
+            width: 500px;
+            height: 200px;
+        }
+
+        .uploadimgsctn {
+            width: 500px;
+        }
+
+        #controldiv button {
+            float: right;
+            margin-left: 10px;
+        }
+
+        html {
+            background-color: white;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        .imgs {
+            height: 80px;
+            width: 100px;
+            border: 1px black;
+            margin: 5px;
+        }
+
+        .imagesDivStyle {
+
+            width: 600px;
+            border: 1px gray;
+            padding: 5px;
+        }
+    </style>
+</head>
+<!--
+
+    Araba ismi = textbox
+    Araba model = number imput
+    Araba fiyat = Number
+    Durum = Radiobutton (emannette-dükkanda)
+    Yakıt tipi - text box
+    Katogori = radio button
+    fites tipi = radioo button
+    
+-->
+
+
+<body>
+
+    <!--
+        <div class="SignUpForm" id="mainform">
+
+        <div class="SignUpFormz" id="form">
+            <div class="input_values">
+
+                <input type="number" placeholder="Car ID" class="txt" id="ID_car" name="ID_car">
+                <input type="text" placeholder="Car Name" class="txt" id="carname" name="carname">
+                <input type="text" placeholder="Year" class="txt" id="year" name="year">
+                <input type="text" placeholder="Price" class="txt" id="price" name="price">
+
+                <select style="width: 30%; text-align: center;" class="txt" id="category">
+                    <option value="none">Please select car category</option>
+                    <option value="Economy">Economy</option>
+                    <option value="Comfort">Comfort</option>
+                    <option value="Prestige">Prestige</option>
+                    <option value="Luxury">Luxury</option>
+                    <option value="Van">Van/Panelvan</option>
+                </select>
+
+                <select style="width: 30%; text-align: center;" class="txt" id="fuelType">
+                    <option value="none">Please select a fuel type</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Oil">Oil</option>
+                    <option value="LPG">LPG</option>
+                </select>
+
+
+
+
+
+            </div>
+
+            <div class="input_btns">
+
+                <input type="submit" id="btnGet" name="btnGet" value="get" class="btn" />
+                <input type="submit" value="DELETE" class="btn" id="btnDelete" name="btnDelete">
+                <input type="submit" value="ADD" class="btn" id="btnAdd" name="btnAdd">
+                <input type="submit" value="Update" class="btn" id="btnUpdate" name="btnUpdate">
+            </div>
+
+
+            <input type="submit" value="Clean Form" class="btn" id="btnClean" name="btnClean">
+
+
+
+
+
+        </div>
+
+    </div>
+
+-->
+    <section class="uploadimgsctn"
+        style="width: 400px; align-items: center; justify-content: center; text-align: center; margin: 5%;">
+
+
+        <label>product Name</label> <input type="text" id="nameinp"> <br><br>
+        <label>Product Price</label> <input type="text" id="priceinp"> <br><br>
+        <label>Stock (Quantity)</label> <input type="text" id="stockinp"><br><br>
+        <label>category</label>
+        <select id="catinp">
+            <option value="value1">value1</option>
+            <option value="value2">value2</option>
+            <option value="value3">value3</option>
+            <option value="value4">value4</option>
+            <option value="value5">value5</option>
+
+
+        </select><br><br>
+
+        <label>Points #1</label><input type="text" id=" p1inp" class="pointers"> <br><br>
+        <label>Points #2</label><input type="text" id=" p2inp" class="pointers"> <br><br>
+        <label>Points #3</label><input type="text" id=" p3inp" class="pointers"> <br><br>
+        <label>Points #4</label><input type="text" id=" p4inp" class="pointers"> <br><br>
+
+
+
+        <label>Description</label> <textarea id="desarea"> </textarea> <br><br>
+        <div id="imageDiv">
+        </div>
+
+        <div id="controldiv">
+
+            <label id="loadlab">uploading 1 of 3</label>
+            <button id="addpropbtn">Add Product</button>
+            <button id="selimgsbtn">Select Image</button>
+
+        </div>
+
+
+    </section>
+
+    <script src="/image_upld.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
