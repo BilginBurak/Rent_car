@@ -27,7 +27,7 @@ body {
   margin: 0 2% 0 5%;
 }
 
-.navbar {
+.navbarz {
   position: sticky;
   top: 1rem;
 
@@ -42,7 +42,7 @@ body {
 
 }
 
-.navbar nav {
+.navbarz nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -310,6 +310,3 @@ body {
   font-weight: bold;
 }
 
-deneme{
-  
-}

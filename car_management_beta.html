@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
 
-
-
     <style>
         :root {
             --main-color: #d4471c;
@@ -49,10 +47,7 @@
             overflow: hidden;
             border: 1px solid rgb(73, 61, 61);
             background-color: var(--black-color);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+
 
 
         }
@@ -140,36 +135,6 @@
 
 
 
-
-
-
-
-
-
-
-
-        #desarea {
-            width: 500px;
-            height: 200px;
-        }
-
-        .uploadimgsctn {
-            width: 500px;
-        }
-
-        #controldiv button {
-            float: right;
-            margin-left: 10px;
-        }
-
-        html {
-            background-color: white;
-        }
-
-        body {
-            background-color: white;
-        }
-
         .imgs {
             height: 80px;
             width: 100px;
@@ -178,11 +143,18 @@
         }
 
         .imagesDivStyle {
-
-            width: 600px;
+            width: 100%;
+            padding: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border: 1px gray;
             padding: 5px;
         }
+        .imageDiv{
+            
+        }
+
     </style>
 </head>
 <!--
@@ -200,8 +172,7 @@
 
 <body>
 
-    <!--
-        <div class="SignUpForm" id="mainform">
+    <div class="SignUpForm" id="mainform">
 
         <div class="SignUpFormz" id="form">
             <div class="input_values">
@@ -228,12 +199,17 @@
                 </select>
 
 
-
-
-
+                <div id="imageDiv">
+                </div>
+        
+                <div id="controldiv">
+        
+                    
+                </div>
             </div>
-
+            
             <div class="input_btns">
+                <input type="submit" id="selimgsbtn" name="selimgsbtn" value="Select Cars Images" class="btn" />
 
                 <input type="submit" id="btnGet" name="btnGet" value="get" class="btn" />
                 <input type="submit" value="DELETE" class="btn" id="btnDelete" name="btnDelete">
@@ -252,56 +228,16 @@
 
     </div>
 
--->
-    <section class="uploadimgsctn"
-        style="width: 400px; align-items: center; justify-content: center; text-align: center; margin: 5%;">
-
-
-        <label>product Name</label> <input type="text" id="nameinp"> <br><br>
-        <label>Product Price</label> <input type="text" id="priceinp"> <br><br>
-        <label>Stock (Quantity)</label> <input type="text" id="stockinp"><br><br>
-        <label>category</label>
-        <select id="catinp">
-            <option value="value1">value1</option>
-            <option value="value2">value2</option>
-            <option value="value3">value3</option>
-            <option value="value4">value4</option>
-            <option value="value5">value5</option>
-
-
-        </select><br><br>
-
-        <label>Points #1</label><input type="text" id=" p1inp" class="pointers"> <br><br>
-        <label>Points #2</label><input type="text" id=" p2inp" class="pointers"> <br><br>
-        <label>Points #3</label><input type="text" id=" p3inp" class="pointers"> <br><br>
-        <label>Points #4</label><input type="text" id=" p4inp" class="pointers"> <br><br>
-
-
-
-        <label>Description</label> <textarea id="desarea"> </textarea> <br><br>
-        <div id="imageDiv">
-        </div>
-
-        <div id="controldiv">
-
-            <label id="loadlab">uploading 1 of 3</label>
-            <button id="addpropbtn">Add Product</button>
-            <button id="selimgsbtn">Select Image</button>
-
-        </div>
-
-
-    </section>
-
-    <script src="/image_upld.js"></script>
+<script type="module">
 
 
 
 
 
+</script>
 
-
-
+    <script src="/car_management_beta.js" type="module"></script>
+    <script src="/firebase.js"></script>
 
 
 </body>

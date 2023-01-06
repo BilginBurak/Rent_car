@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="shortcut icon" href="./images/Cash-PNG-Image-Background.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css"
+        integrity="sha512-6mc0R607di/biCutMUtU9K7NtNewiGQzrvWX4bWTeqmljZdJrwYvKJtnhgR+Ryvj+NRJ8+NnnCM/biGqMe/iRA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  
+
+    <style>
+        
+        .carsproducts{
+            border: 1px solid gray;
+            height: 600px;
+            width: 350px;
+            margin: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+            background-color: aliceblue; 
+            border-radius: 50px;
+        }
+        .carsproducts:hover{
+            border-color: blue;
+            background-color: antiquewhite;
+        }
+        .thumb{
+            width: 300px;
+            height: auto;
+        }
+        
+
+
+
+    </style>
+
+
+</head>
+
+<body>
+
+
+
+
+
+
+    <div class="navbarz">
+
+        <nav class="header">
+            <div class="login_icon">
+
+                <img src="/images/rent-car-low-resolution-logo-color-on-transparent-background.png" alt="">
+
+            </div>
+
+            <ul class="header_menu">
+                <li>
+                    <a href="index.html">HOME</a>
+                </li>
+                <li>
+                    <a href="about.html">about</a>
+                </li>
+                <li>
+                    <a href="vehicles.html">cars</a>
+                </li>
+                <li>
+                    <a href="gallery.html">shows</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="login_nav">
+            <a onclick="logout()">
+
+                <ion-icon name="log-in"></ion-icon>
+                <br>
+                <span>Login</span>
+            </a>
+        </div>
+
+    </div>
+
+    <section class="home">
+        <div class="content">
+            <h3>Express Home Delivery</h3>
+            <p>Restaurant provides with all the amenities that one requires for a shift of mood or change in environment
+                to cherish the pleasant atmosphere and enjoy different cuisines to satisfy your hunger. </p>
+
+            <a href="#" class="btn">Rent a CAR</a>
+
+    </section>
+
+    <!--
+    
+    <div id="slider">
+        <div class="slide active">
+            <img src="images/slider-main-slider-04.jpg" alt="Slide 1">
+        </div>
+        <div class="slide">
+            <img src="images/slider-main-slider-04.jpg" alt="Slide 1">
+        </div>
+        <div class="slide">
+            <img src="images/slider-red-ferrari-super-luxury-car-wallpaper-3840x2160_54.jpg" alt="Slide 3">
+        </div>
+    </div>
+-->
+
+
+    <div class="slider">
+
+
+        <div class="slide">
+            <img src="images/slider_eco.webp" alt="Slide 1">
+            <div class="slide_head">
+
+                <div class="slide_title">
+                    <h1 style="z-index: 50;">Economic Rental Cars </h2>
+                        <h2 style="z-index: 50;">Economic Rental Cars</h2>
+                </div>
+
+                <div class="slide_goto">
+                    <h2 class="btn">Rent</h2>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="slide">
+
+            <img src="images/slider_comfort.jpg" alt="Slide 1">
+            <div class="slide_head">
+
+                <div class="slide_title">
+                    <h1 style="z-index: 50;">Comfort Rental Cars</h2>
+                        <h2 style="z-index: 50;">Comfort Rental Cars</h2>
+                </div>
+
+                <div class="slide_goto">
+                    <h2 style="z-index: 50;" class="btn">Rent</h2>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="slide">
+
+            <img src="images/slider_presttige.jpg" alt="Slide 1">
+
+            <div class="slide_head">
+
+                <section class="slide_title">
+                    <h1 style="z-index: 50;">Prestige Rental Cars</h2>
+                        <h2 style="z-index: 50;">Prestige Rental Cars</h2>
+                </section>
+
+                <section class="slide_goto">
+                    <a href="" class="btn">Rent</a>
+
+                </section>
+            </div>
+
+        </div>
+
+
+        <div class="slide">
+
+
+            <img src="images/slider_lux.jpg" alt="Slide 1">
+            <div class="slide_head">
+
+                <div class="slide_title">
+                    <h1 style="z-index: 50;">Lux Rental Cars</h2>
+                        <h2 style="z-index: 50;">Lux Rental Cars</h2>
+                </div>
+
+                <div class="slide_goto">
+                    <h2 class="btn">Rent</h2>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="slide">
+
+
+            <img src="images/slider_van.jpg" alt="Slide 1">
+            <div class="slide_head">
+
+                <div class="slide_title">
+                    <h1 style="z-index: 50;">Rent a Van / Panelvan</h2>
+                        <h2 style="z-index: 50;">Rent a Van / Panelvan</h2>
+                </div>
+
+                <div class="slide_goto">
+                    <h2 class="btn">Rent</h2>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <div style="padding: 7%;display: flex; flex-wrap: wrap; background-color: aquamarine; height: auto; justify-content: space-around;" class="container" id="productDiv">
+
+        <div class="carsproducts">
+            <div>
+                <h3 class="cartitle" id="cartitle">Audi</h3>
+
+            </div>
+            <div>
+                <img src="/images/slider_eco.jpg" class="thumb" alt="">
+
+            </div>
+            
+
+            <ul style="list-style: none;">
+                <li>Koltuk Saysi: 5</li>
+                <li>Fuel Type: Oil</li>
+                <li>Category: Economy</li>
+                <li>Year: 2022</li>
+                <li>Ehliyet tipi: B </li>
+                <li>price: 5465</li>
+            </ul>
+            <h4>For a Day: 150$</h4>
+            <button class="rentbtn btn">Rent This Car</button>
+        </div>
+
+
+        <div class="carsproducts">
+            <div>
+                <h3 class="cartitle" id="cartitle">Audi</h3>
+
+            </div>
+            <div>
+                <img src="/images/slider_eco.jpg" class="thumb" alt="">
+
+            </div>
+            
+
+            <ul style="list-style: none;">
+                <li>Koltuk Saysi: 5</li>
+                <li>Fuel Type: Oil</li>
+                <li>Category: Economy</li>
+                <li>Year: 2022</li>
+                <li>Ehliyet tipi: B </li>
+                <li>price: 5465</li>
+            </ul>
+            <h4>For a Day: 150$</h4>
+            <button class="rentbtn btn">Rent This Car</button>
+        </div>
+
+        <div class="carsproducts">
+            <div>
+                <h3 class="cartitle" id="cartitle">Audi</h3>
+
+            </div>
+            <div>
+                <img src="/images/slider_eco.jpg" class="thumb" alt="">
+
+            </div>
+            
+
+            <ul style="list-style: none;">
+                <li>Koltuk Saysi: 5</li>
+                <li>Fuel Type: Oil</li>
+                <li>Category: Economy</li>
+                <li>Year: 2022</li>
+                <li>Ehliyet tipi: B </li>
+                <li>price: 5465</li>
+            </ul>
+            <h4>For a Day: 150$</h4>
+            <button class="rentbtn btn">Rent This Car</button>
+        </div>
+
+
+        <div class="carsproducts">
+            <div>
+                <h3 class="cartitle" id="cartitle">Audi</h3>
+
+            </div>
+            <div>
+                <img src="/images/slider_eco.jpg" class="thumb" alt="">
+
+            </div>
+            
+
+            <ul style="list-style: none;">
+                <li>Koltuk Saysi: 5</li>
+                <li>Fuel Type: Oil</li>
+                <li>Category: Economy</li>
+                <li>Year: 2022</li>
+                <li>Ehliyet tipi: B </li>
+                <li>price: 5465</li>
+            </ul>
+            <h4>For a Day: 150$</h4>
+            <button class="rentbtn btn">Rent This Car</button>
+        </div>
+
+
+
+        <div class="carsproducts">
+            <div>
+                <h3 class="cartitle" id="cartitle">Audi</h3>
+
+            </div>
+            <div>
+                <img src="/images/slider_eco.jpg" class="thumb" alt="">
+
+            </div>
+            
+
+            <ul style="list-style: none;">
+                <li>Koltuk Saysi: 5</li>
+                <li>Fuel Type: Oil</li>
+                <li>Category: Economy</li>
+                <li>Year: 2022</li>
+                <li>Ehliyet tipi: B </li>
+                <li>price: 5465</li>
+            </ul>
+            <h4>For a Day: 150$</h4>
+            <button class="rentbtn btn">Rent This Car</button>
+        </div>
+
+
+        <div class="carsproducts">
+            <div>
+                <h3 class="cartitle" id="cartitle">Audi</h3>
+
+            </div>
+            <div>
+                <img src="/images/slider_eco.jpg" class="thumb" alt="">
+
+            </div>
+            
+
+            <ul style="list-style: none;">
+                <li>Koltuk Saysi: 5</li>
+                <li>Fuel Type: Oil</li>
+                <li>Category: Economy</li>
+                <li>Year: 2022</li>
+                <li>Ehliyet tipi: B </li>
+                <li>price: 5465</li>
+            </ul>
+            <h4>For a Day: 150$</h4>
+            <button class="rentbtn btn">Rent This Car</button>
+        </div>
+
+
+        <div class="carsproducts">
+            <div>
+                <h3 class="cartitle" id="cartitle">Audi</h3>
+
+            </div>
+            <div>
+                <img src="/images/slider_eco.jpg" class="thumb" alt="">
+
+            </div>
+            
+
+            <ul style="list-style: none;">
+                <li>Koltuk Saysi: 5</li>
+                <li>Fuel Type: Oil</li>
+                <li>Category: Economy</li>
+                <li>Year: 2022</li>
+                <li>Ehliyet tipi: B </li>
+                <li>price: 5465</li>
+            </ul>
+            <h4>For a Day: 150$</h4>
+            <button class="rentbtn btn">Rent This Car</button>
+        </div>
+
+        <div class="carsproducts">
+            <div>
+                <h3 class="cartitle" id="cartitle">Audi</h3>
+
+            </div>
+            <div>
+                <img src="/images/slider_eco.jpg" class="thumb" alt="">
+
+            </div>
+            
+
+            <ul style="list-style: none;">
+                <li>Koltuk Saysi: 5</li>
+                <li>Fuel Type: Oil</li>
+                <li>Category: Economy</li>
+                <li>Year: 2022</li>
+                <li>Ehliyet tipi: B </li>
+                <li>price: 5465</li>
+            </ul>
+            <h4>For a Day: 150$</h4>
+            <button class="rentbtn btn">Rent This Car</button>
+        </div>
+
+
+
+       
+
+    </div>
+
+
+    <!--
+
+    <div class="r-slider owl-carousel" id="defaultHomeSlider">
+        <div class="r-slider-item">
+            <img src="images/slider-main-slider-04.jpg" class="img-fluid d-block m-auto" alt="">
+        </div>
+        <div class="r-slider-item">
+            <img src="images/slider-New Project (4).png" class="img-fluid d-block m-auto" alt="">
+        </div>
+        <div class="r-slider-item">
+            <img src="images/slider-red-ferrari-super-luxury-car-wallpaper-3840x2160_54.jpg"
+            class="img-fluid d-block m-auto" alt="">
+        </div>
+    </div>
+    
+    <div class="mainslider">
+        <img src="/images/slider-main-slider-04.jpg" alt="">
+        <img src="/images/slider-Modern-cars-are-in-the-studio.jpg" alt="">
+    </div>
+    
+-->
+
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/lightcase.js"></script>
+    <script src="/app_beta.js"></script>
+    <script defer src="https://friconix.com/cdn/friconix.js"> </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+
+</html>
