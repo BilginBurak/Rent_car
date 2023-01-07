@@ -83,22 +83,8 @@ selBtn.addEventListener('click', (e) => {
 
 
     }
-    let lab = document.getElementById('label');
-    //lab.innerHTML= 'clear images';
-    lab.style = 'cursor: pointer; display:block; color:navy;';
-    lab.addEventListener('click', clearImages);
-    imgDiv.append(lab);
 
 });
-
-
-function clearImages() {
-    Files = [];
-    ImageLinksArray = [];
-    imgDiv.innerHTML = "";
-    imgDiv.classList.remove('imagesDivStyle')
-}
-
 
 
 
@@ -116,33 +102,20 @@ btnAdd.addEventListener('click', (e) => {
     const dbRef = ref(database);
 
 
-    ImageLinksArray = [];
-
-
-
-
-
     get(child(dbRef, 'Counters/carIdCounter/')).then((snapshot) => {
         firebaseCarId = Number(snapshot.val());
         firebaseCarId += 1;
-
-        console.log(ID_car);
-
 
 
         for (let i = 0; i < Files.length; i++) {
 
 
-            const metadata = {
-                contentType: Files[i].type
-            };
+            const metadata = { contentType: Files[i].type };
             const storage = getStorage();
-            const ImageAddress = "CarsImages/" + firebaseCarId.toString() + "--" + carname + "_img#" + (i + 1);
-           
-
-
-           
+            const ImageAddress = "CarsImages/" + "CarId:" + firebaseCarId.toString() + "--" + carname + "_img#" + (i + 1);
             const storageRef = sRef(storage, ImageAddress);
+
+
             uploadBytesResumable(storageRef, Files[i], metadata)
                 .then((snapshot) => {
                     console.log('Uploaded', snapshot.totalBytes, 'bytes.');
@@ -150,27 +123,21 @@ btnAdd.addEventListener('click', (e) => {
                     // Let's get a download URL for the file.
                     getDownloadURL(snapshot.ref).then((downloadURL) => {
                         console.log('File available at', downloadURL);
-                        ImageLinksArray.push(downloadURL);
-                        // ...
+
+                        set(ref(database, 'Cars/' + firebaseCarId.toString() + '/CarsLinks/' + i), downloadURL);
+
                     });
                 }).catch((error) => {
                     console.error('Upload failed', error);
                     // ...
-                });
-
-
-
-
-
-
-
-
+                }
+            );
         };
 
-      
 
 
-        console.log(ImageLinksArray);
+
+
 
         update(ref(database, '/Counters'), { carIdCounter: firebaseCarId });
 
@@ -179,137 +146,21 @@ btnAdd.addEventListener('click', (e) => {
 
 
 
-        set(ref(database, 'Cars/' + firebaseCarId.toString()), {
+        update(ref(database, 'Cars/' + firebaseCarId.toString()), {
             ID_car: firebaseCarId,
             carname: carname,
             year: year,
             price: price,
             category: category,
-            fuelType: fuelType,
-            ImageLinksArray: ImageLinksArray
-    
+            fuelType: fuelType
         });
-    
-
-
-
-
-
-
 
 
     });
 
 
-
-   
-
-
-
-
-
-
-    restorebuttonback();
     alert('saved');
 });
-
-
-
-
-
-function restorebuttonback() {
-    selBtn.disabled = false;
-    btnAdd.disabled = false;
-}
-function UploadAllImages() {
-    selBtn.disabled = true;
-    btnAdd.disabled = true;
-    ImageLinksArray = [];
-    for (let i = 0; i < Files.length; i++) {
-
-
-        const metadata = {
-            contentType: Files[i].type
-        };
-        const storage = getStorage();
-        const ImageAddress = "CarsImages/" + carname + "img#" + (i + 1);
-        const storageRef = sRef(storage, ImageAddress);
-        const uploadTask = uploadBytesResumable(storageRef, Files[i], metadata);
-
-        uploadTask.on('state_changed', (snapshot) => {
-            proglab.innerHTML = getImgUploadProgress();
-        }),
-
-            (error) => {
-                alert("error: image upload progress get failed!");
-            },
-            () => {
-                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                    ImageLinksArray.push(downloadURL);
-                    if (IsAllImagesUploaded) {
-                        proglab.innerHTML = "all images uploaded";
-                        UploadProduct();
-                    }
-                });
-            }
-
-
-
-
-    }
-
-}
-
-function IsAllImagesUploaded() {
-    return ImageLinksArray.length = Files.length;
-}
-
-function getShortTitle() {
-    let shortname = name.value.substring(0, 50);
-    return shortname.replace(/[^a-zA-Z0-9]/g, "")
-}
-
-function getImgUploadProgress() {
-    return 'Images Uploaded ' + ImageLinksArray.length + ' of ' + Files.length;
-}
-
-
-function uploadAnImage(imgToUpluad, imgNo) {
-    const metadata = {
-        contentType: imgToUpluad.type
-    };
-    const storage = getStorage();
-    const ImageAddress = "CarsImages/" + getShortTitle() + "img#" + (imgNo + 1);
-    const storageRef = sRef(storage, ImageAddress);
-    const uploadTask = uploadBytesResumable(storageRef, imgToUpluad, metadata);
-
-    uploadTask.on('state_changed', (snapshot) => {
-        proglab.innerHTML = getImgUploadProgress();
-    }),
-
-        (error) => {
-            alert("error: image upload progress get failed!");
-        },
-        () => {
-            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                ImageLinksArray.push(downloadURL);
-                if (IsAllImagesUploaded) {
-                    proglab.innerHTML = "all images uploaded";
-                    UploadProduct();
-                }
-            });
-        }
-}
-
-
-
-
-
-
-
-
-
-
 
 
 
