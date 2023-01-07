@@ -36,7 +36,7 @@
 
         .SignUpForm {
             width: 80%;
-            height: 70%;
+            height: auto;
             padding: 30px;
             text-align: center;
             /*background: url(./signUpBackGround.jpg);   */
@@ -44,11 +44,12 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            overflow: hidden;
+            
             border: 1px solid rgb(73, 61, 61);
             background-color: var(--black-color);
-
-
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
         }
 
@@ -200,6 +201,8 @@
 
 
                 <div id="imageDiv">
+                    <label for="" id="label"></label>
+                    <label for="" id="proglab"></label>
                 </div>
         
                 <div id="controldiv">
@@ -237,7 +240,6 @@
 </script>
 
     <script src="/car_management_beta.js" type="module"></script>
-    <script src="/firebase.js"></script>
 
 
 </body>

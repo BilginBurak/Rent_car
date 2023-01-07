@@ -8,6 +8,19 @@ import { getStorage, ref as sRef, uploadBytesResumable, getDownloadURL } from "h
 
 // Initialize Firebase
 
+const firebaseConfig = {
+    apiKey: "AIzaSyD8huoUJahSSgfeVrduetfga8VcAn3ohUA",
+    authDomain: "rent-car-b7bab.firebaseapp.com",
+    databaseURL: "https://rent-car-b7bab-default-rtdb.firebaseio.com",
+    projectId: "rent-car-b7bab",
+    storageBucket: "rent-car-b7bab.appspot.com",
+    messagingSenderId: "307208189325",
+    appId: "1:307208189325:web:49734a018255314d7039c4",
+    measurementId: "G-5HKTNKYZ9R"
+};
+
+
+
 
 var firebaseCarId;
 
@@ -27,6 +40,8 @@ var ImageLinksArray = [];
 const imgDiv = document.getElementById("imageDiv");
 const selBtn = document.getElementById("selimgsbtn");
 const btnAdd = document.getElementById("btnAdd");
+
+const proglab = document.getElementById("proglab");
 
 
 function assingImgsToFilesArray(thefiles) {
@@ -65,20 +80,22 @@ selBtn.addEventListener('click', (e) => {
 
             FileReaders[i].readAsDataURL(Files[i]);
         }
-        let lab = document.getElementById('label');
-        lab.innerHTML= 'clear images';
-        lab.style = 'cursor: pointer; display:block; color:navy;';
-        lab.addEventListener('click', clearImages);
-        imgDiv.append(lab);
+
 
     }
+    let lab = document.getElementById('label');
+    //lab.innerHTML= 'clear images';
+    lab.style = 'cursor: pointer; display:block; color:navy;';
+    lab.addEventListener('click', clearImages);
+    imgDiv.append(lab);
+
 });
 
 
-function clearImages(){
-    Files =[];
-    ImageLinksArray=[];
-    imgDiv.innerHTML ="";
+function clearImages() {
+    Files = [];
+    ImageLinksArray = [];
+    imgDiv.innerHTML = "";
     imgDiv.classList.remove('imagesDivStyle')
 }
 
@@ -97,16 +114,67 @@ btnAdd.addEventListener('click', (e) => {
 
 
     const dbRef = ref(database);
+
+
+    ImageLinksArray = [];
+
+
+
+
+
     get(child(dbRef, 'Counters/carIdCounter/')).then((snapshot) => {
         firebaseCarId = Number(snapshot.val());
         firebaseCarId += 1;
 
         console.log(ID_car);
-        console.log(firebaseCarId);
+
+
+
+        for (let i = 0; i < Files.length; i++) {
+
+
+            const metadata = {
+                contentType: Files[i].type
+            };
+            const storage = getStorage();
+            const ImageAddress = "CarsImages/" + firebaseCarId.toString() + "--" + carname + "_img#" + (i + 1);
+           
+
+
+           
+            const storageRef = sRef(storage, ImageAddress);
+            uploadBytesResumable(storageRef, Files[i], metadata)
+                .then((snapshot) => {
+                    console.log('Uploaded', snapshot.totalBytes, 'bytes.');
+                    console.log('File metadata:', snapshot.metadata);
+                    // Let's get a download URL for the file.
+                    getDownloadURL(snapshot.ref).then((downloadURL) => {
+                        console.log('File available at', downloadURL);
+                        ImageLinksArray.push(downloadURL);
+                        // ...
+                    });
+                }).catch((error) => {
+                    console.error('Upload failed', error);
+                    // ...
+                });
+
+
+
+
+
+
+
+
+        };
+
+      
+
+
+        console.log(ImageLinksArray);
 
         update(ref(database, '/Counters'), { carIdCounter: firebaseCarId });
 
-
+        console.log(firebaseCarId);
 
 
 
@@ -118,13 +186,31 @@ btnAdd.addEventListener('click', (e) => {
             price: price,
             category: category,
             fuelType: fuelType,
-            linksOfImages: ImageLinksArray
-
+            ImageLinksArray: ImageLinksArray
+    
         });
+    
+
+
+
+
+
+
+
 
     });
-    alert('saved');
+
+
+
+   
+
+
+
+
+
+
     restorebuttonback();
+    alert('saved');
 });
 
 
@@ -137,22 +223,53 @@ function restorebuttonback() {
 }
 function UploadAllImages() {
     selBtn.disabled = true;
-    btnAdd.disabled = true;  
-    ImageLinksArray=[];
-    for (let i = 0; i < Files.length; i++) { uploadAnImage(Files[i], i); }
+    btnAdd.disabled = true;
+    ImageLinksArray = [];
+    for (let i = 0; i < Files.length; i++) {
+
+
+        const metadata = {
+            contentType: Files[i].type
+        };
+        const storage = getStorage();
+        const ImageAddress = "CarsImages/" + carname + "img#" + (i + 1);
+        const storageRef = sRef(storage, ImageAddress);
+        const uploadTask = uploadBytesResumable(storageRef, Files[i], metadata);
+
+        uploadTask.on('state_changed', (snapshot) => {
+            proglab.innerHTML = getImgUploadProgress();
+        }),
+
+            (error) => {
+                alert("error: image upload progress get failed!");
+            },
+            () => {
+                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                    ImageLinksArray.push(downloadURL);
+                    if (IsAllImagesUploaded) {
+                        proglab.innerHTML = "all images uploaded";
+                        UploadProduct();
+                    }
+                });
+            }
+
+
+
+
+    }
 
 }
 
-function IsAllImagesUploaded(){
+function IsAllImagesUploaded() {
     return ImageLinksArray.length = Files.length;
 }
 
-function getShortTitle(){
-    let shortname = name.value.substring(0,50);
-    return shortname.replace(/[^a-zA-Z0-9]/g,"")
+function getShortTitle() {
+    let shortname = name.value.substring(0, 50);
+    return shortname.replace(/[^a-zA-Z0-9]/g, "")
 }
 
-function getImgUploadProgress(){
+function getImgUploadProgress() {
     return 'Images Uploaded ' + ImageLinksArray.length + ' of ' + Files.length;
 }
 
@@ -166,9 +283,10 @@ function uploadAnImage(imgToUpluad, imgNo) {
     const storageRef = sRef(storage, ImageAddress);
     const uploadTask = uploadBytesResumable(storageRef, imgToUpluad, metadata);
 
-    uploadTask.on('state-changed', (snapshot) => {
+    uploadTask.on('state_changed', (snapshot) => {
         proglab.innerHTML = getImgUploadProgress();
     }),
+
         (error) => {
             alert("error: image upload progress get failed!");
         },
