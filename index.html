@@ -19,11 +19,13 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+
 
     <style>
-        
-        .carsproducts{
+        .carsproducts {
             border: 1px solid gray;
             height: 600px;
             width: 350px;
@@ -32,21 +34,76 @@
             align-items: center;
             justify-content: space-evenly;
             flex-direction: column;
-            background-color: aliceblue; 
+            background-color: aliceblue;
             border-radius: 50px;
+            text-align: center;
         }
-        .carsproducts:hover{
+
+        .carsproducts:hover {
             border-color: blue;
-            background-color: antiquewhite;
+            background-color: rgb(255, 248, 239);
         }
-        .thumb{
+
+        .thumb {
             width: 300px;
             height: auto;
         }
-        
 
 
 
+        .carProperties {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: space-between;
+            width: 300px;
+
+        }
+
+        .carbottomdetail {
+            background-color: rgba(153, 226, 231, 0.185);
+            backdrop-filter: blur(10px);
+
+
+            width: 70px;
+            height: 58px;
+            margin: 0;
+            font-size: 13px;
+            text-align: center;
+            line-height: 10px;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+
+        .carimagediv {
+            height: 30%;
+            display: flex;
+            align-items: center;
+        }
+
+        .rentbtn {
+            display: inline-block;
+            padding: 1rem 4rem;
+            border-radius: 30rem;
+            font-size: 1.7rem;
+            color: rgb(3, 0, 0);
+            background-color: rgba(78, 9, 99, 0.158);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.1s ease-in;
+            font-weight: 400;
+
+
+
+        }
+
+        .rentbtn:hover {
+            opacity: 0.7;
+            color: white;
+            background-color: rgb(101, 64, 82);
+        }
     </style>
 
 
@@ -73,13 +130,13 @@
                     <a href="index.html">HOME</a>
                 </li>
                 <li>
-                    <a href="login.html">login</a>
+                    <a href="about.html">about</a>
                 </li>
                 <li>
-                    <a href="car_management_beta.html">car Management</a>
+                    <a href="vehicles.html">cars</a>
                 </li>
                 <li>
-                    <a href="car_list.html">car list</a>
+                    <a href="gallery.html">shows</a>
                 </li>
             </ul>
         </nav>
@@ -227,235 +284,283 @@
 
     </div>
 
-    <div style="padding: 7%;display: flex; flex-wrap: wrap; background-color: aquamarine; height: auto; justify-content: space-around;" class="container" id="productDiv">
+    <div style="padding: 7%;display: flex; flex-wrap: wrap; background-color: aquamarine; height: auto; justify-content: space-around;"
+        class="container" id="AllProducts">
 
-        <div class="carsproducts">
-            <div>
-                <h3 class="cartitle" id="cartitle">Audi</h3>
 
-            </div>
-            <div>
-                <img src="/images/slider_eco.jpg" class="thumb" alt="">
+        <!--
+
+
+    <div class="carsproducts" id="carsproducts">
+        <div class="carnameDiv">
+            <h3 ><span class="carname" id="carname">Audi</span></h3>
+            
+        </div>
+        <div>
+            <img src="/images/slider_eco.jpg" class="thumb" alt="" id="Carimage">
+            
+        </div>
+        <div>
+            
+            
+            <ul style="list-style: none;">
+                <li>Koltuk Saysi: <span id="seatSpn">5</span></li>
+                <li>Fuel Type: <span id="fuelSpn">Oil</span> </li>
+                <li>Category: <span id="categorySpn">Economy</span> </li>
+                <li>Year: <span id="yearSpn">2022</span></li>
+                <li>Ehliyet tipi: <span id="typeSpn">B</span> </li>
+            </ul>
+        </div>
+        <div>   
+            <h4>For a Day:<span id="price">150$</span></h4>
 
             </div>
             
-
-            <ul style="list-style: none;">
-                <li>Koltuk Saysi: 5</li>
-                <li>Fuel Type: Oil</li>
-                <li>Category: Economy</li>
-                <li>Year: 2022</li>
-                <li>Ehliyet tipi: B </li>
-                <li>price: 5465</li>
-            </ul>
-            <h4>For a Day: 150$</h4>
-            <button class="rentbtn btn">Rent This Car</button>
+            <div>
+                
+                <button class="rentbtn btn">Rent This Car</button>
+            </div>  
         </div>
-
-
-        <div class="carsproducts">
-            <div>
-                <h3 class="cartitle" id="cartitle">Audi</h3>
-
-            </div>
-            <div>
-                <img src="/images/slider_eco.jpg" class="thumb" alt="">
-
-            </div>
-            
-
-            <ul style="list-style: none;">
-                <li>Koltuk Saysi: 5</li>
-                <li>Fuel Type: Oil</li>
-                <li>Category: Economy</li>
-                <li>Year: 2022</li>
-                <li>Ehliyet tipi: B </li>
-                <li>price: 5465</li>
-            </ul>
-            <h4>For a Day: 150$</h4>
-            <button class="rentbtn btn">Rent This Car</button>
-        </div>
-
-        <div class="carsproducts">
-            <div>
-                <h3 class="cartitle" id="cartitle">Audi</h3>
-
-            </div>
-            <div>
-                <img src="/images/slider_eco.jpg" class="thumb" alt="">
-
-            </div>
-            
-
-            <ul style="list-style: none;">
-                <li>Koltuk Saysi: 5</li>
-                <li>Fuel Type: Oil</li>
-                <li>Category: Economy</li>
-                <li>Year: 2022</li>
-                <li>Ehliyet tipi: B </li>
-                <li>price: 5465</li>
-            </ul>
-            <h4>For a Day: 150$</h4>
-            <button class="rentbtn btn">Rent This Car</button>
-        </div>
-
-
-        <div class="carsproducts">
-            <div>
-                <h3 class="cartitle" id="cartitle">Audi</h3>
-
-            </div>
-            <div>
-                <img src="/images/slider_eco.jpg" class="thumb" alt="">
-
-            </div>
-            
-
-            <ul style="list-style: none;">
-                <li>Koltuk Saysi: 5</li>
-                <li>Fuel Type: Oil</li>
-                <li>Category: Economy</li>
-                <li>Year: 2022</li>
-                <li>Ehliyet tipi: B </li>
-                <li>price: 5465</li>
-            </ul>
-            <h4>For a Day: 150$</h4>
-            <button class="rentbtn btn">Rent This Car</button>
-        </div>
+        
+        
+        
+        
+    -->
 
 
 
-        <div class="carsproducts">
-            <div>
-                <h3 class="cartitle" id="cartitle">Audi</h3>
-
-            </div>
-            <div>
-                <img src="/images/slider_eco.jpg" class="thumb" alt="">
-
-            </div>
-            
-
-            <ul style="list-style: none;">
-                <li>Koltuk Saysi: 5</li>
-                <li>Fuel Type: Oil</li>
-                <li>Category: Economy</li>
-                <li>Year: 2022</li>
-                <li>Ehliyet tipi: B </li>
-                <li>price: 5465</li>
-            </ul>
-            <h4>For a Day: 150$</h4>
-            <button class="rentbtn btn">Rent This Car</button>
-        </div>
-
-
-        <div class="carsproducts">
-            <div>
-                <h3 class="cartitle" id="cartitle">Audi</h3>
-
-            </div>
-            <div>
-                <img src="/images/slider_eco.jpg" class="thumb" alt="">
-
-            </div>
-            
-
-            <ul style="list-style: none;">
-                <li>Koltuk Saysi: 5</li>
-                <li>Fuel Type: Oil</li>
-                <li>Category: Economy</li>
-                <li>Year: 2022</li>
-                <li>Ehliyet tipi: B </li>
-                <li>price: 5465</li>
-            </ul>
-            <h4>For a Day: 150$</h4>
-            <button class="rentbtn btn">Rent This Car</button>
-        </div>
-
-
-        <div class="carsproducts">
-            <div>
-                <h3 class="cartitle" id="cartitle">Audi</h3>
-
-            </div>
-            <div>
-                <img src="/images/slider_eco.jpg" class="thumb" alt="">
-
-            </div>
-            
-
-            <ul style="list-style: none;">
-                <li>Koltuk Saysi: 5</li>
-                <li>Fuel Type: Oil</li>
-                <li>Category: Economy</li>
-                <li>Year: 2022</li>
-                <li>Ehliyet tipi: B </li>
-                <li>price: 5465</li>
-            </ul>
-            <h4>For a Day: 150$</h4>
-            <button class="rentbtn btn">Rent This Car</button>
-        </div>
-
-        <div class="carsproducts">
-            <div>
-                <h3 class="cartitle" id="cartitle">Audi</h3>
-
-            </div>
-            <div>
-                <img src="/images/slider_eco.jpg" class="thumb" alt="">
-
-            </div>
-            
-
-            <ul style="list-style: none;">
-                <li>Koltuk Saysi: 5</li>
-                <li>Fuel Type: Oil</li>
-                <li>Category: Economy</li>
-                <li>Year: 2022</li>
-                <li>Ehliyet tipi: B </li>
-                <li>price: 5465</li>
-            </ul>
-            <h4>For a Day: 150$</h4>
-            <button class="rentbtn btn">Rent This Car</button>
-        </div>
 
 
 
-       
+
 
     </div>
 
 
-    <!--
 
-    <div class="r-slider owl-carousel" id="defaultHomeSlider">
-        <div class="r-slider-item">
-            <img src="images/slider-main-slider-04.jpg" class="img-fluid d-block m-auto" alt="">
-        </div>
-        <div class="r-slider-item">
-            <img src="images/slider-New Project (4).png" class="img-fluid d-block m-auto" alt="">
-        </div>
-        <div class="r-slider-item">
-            <img src="images/slider-red-ferrari-super-luxury-car-wallpaper-3840x2160_54.jpg"
-            class="img-fluid d-block m-auto" alt="">
-        </div>
-    </div>
-    
-    <div class="mainslider">
-        <img src="/images/slider-main-slider-04.jpg" alt="">
-        <img src="/images/slider-Modern-cars-are-in-the-studio.jpg" alt="">
-    </div>
-    
--->
 
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/lightcase.js"></script>
-    <script src="/app_beta.js"></script>
+
+
+
+
+
+
+
     <script defer src="https://friconix.com/cdn/friconix.js"> </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+    <script src="/app_beta.js" type="module"></script>
+    <script src="firebase.js"></script>
+    <script src="/get_cars_info.js" type="module"></script>
 
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+
+
+
+    <script type="module">
+
+        // Slider Öğelerini Al
+        var slider = document.querySelector('.slider');
+        var slides = slider.querySelectorAll('.slide');
+
+        // Geçerli Öğeyi İndeks ile Belirt
+        var currentSlide = 0;
+
+        // Öğeleri Gizle
+        function hideSlides() {
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+        }
+
+        // Bir Öğeyi Göster
+        function showSlide(index) {
+            hideSlides();
+            slides[index].style.display = 'block';
+        }
+
+        // Öğeleri Otomatik Geçiş Yaparak Göster
+        function autoSlide() {
+            hideSlides();
+            currentSlide++;
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+            showSlide(currentSlide);
+            setTimeout(autoSlide, 2000); // 5 saniyede bir geçiş yap
+        }
+
+        window.onload = function () {
+            autoSlide();
+        };
+
+
+        function logout() {
+            if (confirm('sen ağlıyoon??'))
+                window.location.replace("index.html")
+        }
+
+
+
+    </script>
+    <!--
+    
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
+        import { getDatabase, set, ref, push, child, onValue, get } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-database.js";
+        
+        
+        var firebaseConfig = {
+            apiKey: "AIzaSyD8huoUJahSSgfeVrduetfga8VcAn3ohUA",
+    authDomain: "rent-car-b7bab.firebaseapp.com",
+    projectId: "rent-car-b7bab",
+    storageBucket: "rent-car-b7bab.appspot.com",
+    messagingSenderId: "307208189325",
+    appId: "1:307208189325:web:49734a018255314d7039c4"
+};
+
+
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+window.onload = resfreshtable();
+//Araba Listeleme
+
+function resfreshtable() {
+    $('#dataTbl td').remove();
+    var rowNum = 0;
+    const dbRef = ref(database, 'Cars/');
+    
+    onValue(dbRef, (snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+            const childKey = childSnapshot.key;
+            const childData = childSnapshot.val();
+            // ...
+            rowNum += 1;
+            
+            var row = "<div class='carsproducts'> <div class='carnameDiv'> <span class='carname' id='carname'>"
+                + childData.carname + "  </span></div><div> <img src='/images/slider_eco.jpg' class='thumb'></div>  <div class='detaildiv'> <ul class='ulstyle'><li><span id='seatSpn'>"
+                    + childData.fuelType + "</span></li><li><span id='seatSpn'>"
+                + childData.category + "</span></li><li><span id='seatSpn'>"
+                + childData.year + "</span></li></ul></div> <div class='priceDiv'> <h4>For a Day:<span id='price'>"
+                    + childData.price + "</span></h4></div> <div class='btndiv'> <button class='rentbtn btn'>Rent This Car</button></div></div>";
+                    
+                    
+                    
+                    
+                    
+                    //  var row2= "<div class='carsproducts' id='carsproducts'><div class='carnameDiv'> <h3 ><span class='carname' id='carname'>Audi</span></h3></div><div><img src='/images/slider_eco.jpg' class='thumb' alt='' id='Carimage'></div><div> <ul style='list-style: none;'><li>Koltuk Saysi: <span id='seatSpn'>5</span></li><li>Fuel Type: <span id='fuelSpn'>Oil</span> </li><li>Category: <span id='categorySpn'>Economy</span> </li><li>Year: <span id='yearSpn'>2022</span></li><li>Ehliyet tipi: <span id='typeSpn'>B</span> </li></ul></div><div><h4>For a Day:<span id='price'>150$</span></h4></div><div><button class='rentbtn btn'>Rent This Car</button></div></div>";
+                    
+                    
+                    
+                    
+                    $(row).appendTo('#AllProducts');
+                    
+                });
+            }, {
+                onlyOnce: true
+            });
+        }
+        
+        /*
+        function resfreshtable() {
+            $('#dataTbl td').remove();
+    var rowNum = 0;
+    const dbRef = ref(database, 'Cars/');
+    
+    onValue(dbRef, (snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+            const childKey = childSnapshot.key;
+            const childData = childSnapshot.val();
+            // ...
+            rowNum += 1;
+            /*var row = "<div class='Car_Box col-sm-4'><div class='Car_Box-img'><img src='./image/Cars/Deductible/D1.jpg' alt='car-image'></div> <div class='Car_Box-CarName'>"
+                +childData.CarName+"<div class='CarName'></div>"+"<div class='Car_Box-Detail'><a class='Car_Box_Button'>"
+                    +childData.CarModel+"</a> <a class='Car_Box_Button'>"
+                        +childData.CarCategoriType+"</a><a class='Car_Box_Button'> "
+                            +childData.CarPrice+"</a></div>"
+                            +childData.CarCategoriType + "</div>"
+                            
+                            
+                            var row="<div class='Car_Box'> <div class='Car_Box-CarName'> <span class='h2 text-black'> "
+                                +childData.carname+"</span> </div> <div class='Car_Box-img'> <img src='./image/Cars/Deductible/D1.jpg' alt='car-image'> </div> <div class='Car_Box-Price'> <span class='h3 text-warning'>&euro;"
+                                    +childData.price+"</span>/Week </div> <div class='Car_Box-Detail'> <ul class='fa-ul'> <li><span class='fa-li'><span class='fas fa-car-side text-warning'></span></span> <strong>"
+                                        +childData.price+"</strong> Doors</li> <li><span class='fa-li'><span class='fas fa-users text-warning'></span></span> <strong>"
+                                            +childData.price+"</strong> Passengers</li> <li><span class='fa-li'><span class='fas fa-suitcase text-warning'></span></span> <strong>"
+                                                +childData.pirce+"</strong> Suitcases</li> <li><span class='fa-li'><span class='fas fa-gear text-warning'></span></span>"
+                                                    +childData.price+"</li> <li><span class='fa-li'><span class='fas fa-gas-pump text-warning'></span></span>"
+                                                        +childData.pirce+"</li> <li><span class='fa-li'><i class='fa-sharp fa-solid fa-calendar text-warning'></i></span><strong>"
+                                                            +childData.pirce+"</strong> Model</li> <li><span class='fa-li'><i class='fa-solid fa-bars-staggered text-warning'></i></span>"
+                                                                +childData.pirce+"</li> </ul> </div> <div class='Car_Box-Button'> <button class='Car_Box-RentBtn'>Kirala</button> </div> </div>";
+                                                                
+                                                                $(row).appendTo('#tumAraclar');
+                                                                
+                                                            });
+                                                        }, {
+                                                            onlyOnce: true
+                                                        });
+                                                    }
+                                                    */
+                                                    /*
+                                                    function resfreshtable() {
+                                                        $('#dataTbl td').remove();
+                                                        var rowNum = 0;
+                                                        const dbRef = ref(database, 'Cars/');
+                                                        
+                                                        onValue(dbRef, (snapshot) => {
+                                                            snapshot.forEach((childSnapshot) => {
+                                                                var childKey = childSnapshot.key;
+                const childData = childSnapshot.val();
+                // ...
+                rowNum += 1;
+                
+                var removebtn = "<input data-key='" + childSnapshot.key + "'  class='btn btn-danger btn-block removeBtn' value='detete' id='btnDelete' type='button'></input>";
+                //var removeBtn_elem = "<td><button data-key='" + item.key + "' class='btn btn-danger btn-block removeBtn'>Sil</button></td>";
+                
+                
+                
+                var row =
+                "<tr><td>" + rowNum +
+                    "</td><td>" + childData.ID_car +
+                        "</td><td>" + childData.carname +
+                            "</td><td>" + childData.category +
+                                "</td><td>" + childData.fuelType +
+                                    "</td><td>" + childData.year +
+                                        "</td><td>" + childData.price +
+                                            "</td><td>" + removebtn +
+                                                "</td></tr>"
+                                                
+                                                $(row).appendTo('#dataTbl');
+                                                
+                                            });
+                                        }, {
+                                            onlyOnce: true
+                                        });
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    };
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    */
+                                    
+                                    
+                                    
+                                    
+                                </script>
+                            -->
 </body>
 
 </html>
