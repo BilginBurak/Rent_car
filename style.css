@@ -218,11 +218,9 @@ body {
   flex-direction: column;
   text-align: center;
 
-  position: fixed;
+ 
 
-  top: 1rem;
-  right: 1rem;
-
+ 
   box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.185);
 
   cursor: pointer;
@@ -232,10 +230,9 @@ body {
 
   transition: none 1s ease;
  
-  zoom: 130%;
-
-  top: 0;
-  right: 0;
+ 
+  scale:120%;
+  
 }
 
 
@@ -305,3 +302,11 @@ body {
   font-weight: bold;
 }
 
+@media screen and (max-width:600px) {
+
+
+  .navbarz, .home, .slider{
+    zoom: 40%;
+  }
+  
+}
