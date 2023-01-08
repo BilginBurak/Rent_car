@@ -45,12 +45,17 @@ function resfreshtable() {
             var row2= "<div class='carsproducts' id='carsproducts'><div class='carnameDiv'> <h2 ><strong class='carname' id='carname'>"
             + childData.carname + "</strong></h2><div class='categoryheader'><h4>"
             +childData.category+"</h4> </div> </div><div class='carimagediv'><img src='"
-            +childData.CarsLinks+"' class='thumb' alt='' id='Carimage'></div> <div class='pricetag'><h3><strong>$"+childData.price+"</strong>/Days</h3></div>"
+            +childData.CarsLinks+"' class='thumb' alt='' id='Carimage'></div> <div class='pricetag'><h3><strong>$"
+            +childData.price+"</strong>/Day</h3></div>"
             + "<div  class='carProperties'> "
-            +"<div class='carbottomdetail'><p>Capacity</p> <strong>"+childData.capacity+"</strong></div>"
-            +"<div class='carbottomdetail'><p>Fuel</p> <strong>"+childData.fuelType+"</strong></div>"
-            +"<div class='carbottomdetail'><p>Year</p> <strong>"+childData.year+"</strong></div>"
-            +"<div class='carbottomdetail'><p>License</p> <strong>"+childData.licenseType+"</strong></div> </div>"
+            +"<div class='carbottomdetail'><p>Capacity</p> <strong>"
+            +childData.capacity+"</strong></div>"
+            +"<div class='carbottomdetail'><p>Fuel</p> <strong>"
+            +childData.fuelType+"</strong></div>"
+            +"<div class='carbottomdetail'><p>Year</p> <strong>"
+            +childData.year+"</strong></div>"
+            +"<div class='carbottomdetail'><p>Gear</p> <strong>"
+            +childData.gearType+"</strong></div> </div>"
             +"<button class='rentbtn'>Rent This Car</button></div></div> ";
 
 

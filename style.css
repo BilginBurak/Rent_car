@@ -19,7 +19,6 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--main-color);
 }
 
 .header {
@@ -115,7 +114,7 @@ body {
 .home {
   min-height: 100vh;
   background-image: linear-gradient(to bottom, rgba(21, 33, 44, 0) 70%, rgba(199, 25, 25, 0) 10%,
-  rgb(28, 34, 50)), url(./images/slider-Modern-cars-are-in-the-studio.jpg);
+  rgb(255, 255, 255)), url(./images/slider-Modern-cars-are-in-the-studio.jpg);
   background-size: cover;
 
   /*background-image: linear-gradient(rgba(138, 131, 131, 0.6), rgba(126, 93, 93, 0.6)), url(./image/info.bg.jpg);
@@ -234,7 +233,7 @@ body {
   transition: none 1s ease;
  
   zoom: 130%;
-  
+
   top: 0;
   right: 0;
 }
@@ -253,8 +252,6 @@ body {
   margin: 10%;
   padding: 0;
 
-  background: linear-gradient(to bottom, rgba(9, 128, 240, 0.705) 7rgba(199, 25, 25, 0.459), 0) 10%,
-    rgb(255, 255, 255);
 
 }
 
@@ -287,7 +284,6 @@ body {
 
 .slider {
 
-  background-color: var(--main-color);
   padding: 0;
   margin: 0;
   position: relative;

@@ -28,8 +28,8 @@
         .carsproducts {
             border: 1px solid gray;
             height: 600px;
-            width: 350px;
-            margin: 25px;
+            width: 360px;
+            margin: 20px;
             display: flex;
             align-items: center;
             justify-content: space-evenly;
@@ -37,11 +37,24 @@
             background-color: aliceblue;
             border-radius: 50px;
             text-align: center;
+            transition: all 0.4s ease-out;
+            
         }
 
         .carsproducts:hover {
             border-color: blue;
             background-color: rgb(255, 248, 239);
+           
+            transition: all 0.2s ease-in;
+            scale: 120% ;
+            
+
+
+
+           
+
+
+         
         }
 
         .thumb {
@@ -64,16 +77,14 @@
             background-color: rgba(153, 226, 231, 0.185);
             backdrop-filter: blur(10px);
 
-
-            width: 70px;
+            width: 75px;
             height: 58px;
-            margin: 0;
-            font-size: 13px;
+            margin: 0 2px;
+
+            font-size: 12px;
             text-align: center;
             line-height: 10px;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
+
         }
 
 
@@ -104,6 +115,9 @@
             color: white;
             background-color: rgb(101, 64, 82);
         }
+
+    
+    
     </style>
 
 
@@ -133,7 +147,7 @@
                     <a href="about.html">about</a>
                 </li>
                 <li>
-                    <a href="vehicles.html">cars</a>
+                    <a href="#AllProducts">cars</a>
                 </li>
                 <li>
                     <a href="gallery.html">shows</a>
@@ -284,7 +298,7 @@
 
     </div>
 
-    <div style="padding: 7%;display: flex; flex-wrap: wrap; background-color: aquamarine; height: auto; justify-content: space-around;"
+    <div style="padding: 7%;display: flex; flex-wrap: wrap;  height: auto; justify-content: space-around;"
         class="container" id="AllProducts">
 
 
