@@ -98,6 +98,10 @@ btnAdd.addEventListener('click', (e) => {
     var category = document.getElementById('category').value;
     var fuelType = document.getElementById('fuelType').value;
 
+    var licenseType = document.getElementById('licenseType').value;
+    var capacity = document.getElementById('capacity').value;
+    var gearType = document.getElementById('gearType').value;
+
 
     const dbRef = ref(database);
 
@@ -131,7 +135,7 @@ btnAdd.addEventListener('click', (e) => {
                     console.error('Upload failed', error);
                     // ...
                 }
-            );
+                );
         };
 
 
@@ -152,7 +156,11 @@ btnAdd.addEventListener('click', (e) => {
             year: year,
             price: price,
             category: category,
-            fuelType: fuelType
+            fuelType: fuelType,
+            licenseType: licenseType,
+            capacity: capacity,
+            gearType: gearType
+
         });
 
 
@@ -270,6 +278,9 @@ btnGet.addEventListener('click', (e) => {
         document.getElementById('fuelType').value = data.fuelType;
 
 
+        document.getElementById('licenseType').value = data.licenseType;
+        document.getElementById('capacity').value = data.capacity;
+        document.getElementById('gearType').value = data.gearType;
 
 
     });
@@ -302,13 +313,21 @@ btnUpdate.addEventListener('click', (e) => {
     var category = document.getElementById('category').value;
     var fuelType = document.getElementById('fuelType').value;
 
+    var licenseType = document.getElementById('licenseType').value;
+    var capacity = document.getElementById('capacity').value;
+    var gearType = document.getElementById('gearType').value;
+
+
     update(ref(database, 'Cars/' + ID_car), {
         ID_car: ID_car,
         carname: carname,
         year: year,
         price: price,
         category: category,
-        fuelType: fuelType
+        fuelType: fuelType,
+        licenseType: licenseType,
+        capacity: capacity,
+        gearType: gearType
 
 
     })
@@ -335,6 +354,9 @@ btnClean.addEventListener('click', (e) => {
     document.getElementById('category').value = "none";
     document.getElementById('fuelType').value = "none";
 
+    document.getElementById('licenseType').value = "";
+    document.getElementById('capacity').value = "";
+    document.getElementById('gearType').value = "none";
 
 
 
