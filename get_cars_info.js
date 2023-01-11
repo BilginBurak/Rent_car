@@ -43,6 +43,9 @@ function getCars() {
 
 */
 
+
+
+
             var row2= "<div class='carsproducts' id='carsproducts'><div class='carnameDiv'> <h2 ><strong class='carname' id='carname'>"
             + childData.carname + "</strong></h2><div class='categoryheader'><h4>"
             +childData.category+"</h4> </div> </div><div class='carimagediv'><img src='"
@@ -57,7 +60,7 @@ function getCars() {
             +childData.year+"</strong></div>"
             +"<div class='carbottomdetail'><p>Gear</p> <strong>"
             +childData.gearType+"</strong></div> </div>"
-            +"<button class='rentbtn'>Rent This Car</button></div></div> ";
+            +"<button data-key='" + childKey + "' class='rentbtn'>Rent This Car</button></div></div> ";
 
 
 
@@ -70,3 +73,14 @@ function getCars() {
     });
 }
 
+
+
+
+
+$("body").on("click", ".rentbtn", function () {
+    var $keyCar = $(this).data("key");
+    //alert("Are you sure you want to delete the tool?");
+    
+console.log($keyCar)
+
+});

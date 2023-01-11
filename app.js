@@ -38,3 +38,4 @@ window.onload = function() {
     if (confirm('sen ağlıyoon??'))
     window.location.replace("index.html")
   }
+

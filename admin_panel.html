@@ -62,8 +62,14 @@
             background-color: blue;
         }
 
-        #About {
-            background-color: orange;
+        #UsersTab {
+            background-color: rgba(255, 166, 0, 0.329);
+        }
+
+
+        .carTableContainer
+        {
+            font-size: 16px;
         }
     </style>
 </head>
@@ -107,10 +113,10 @@
 
     <!-- Tab links -->
     <div class="tab">
-        <button class="tablink" onclick="openPage('carList', this, 'red')">Car List</button>
-        <button class="tablink" onclick="openPage('addCar', this, 'green')" id="defaultOpen">ADD CAR</button>
+        <button class="tablink" onclick="openPage('carList', this, 'red')" >Car List</button>
+        <button class="tablink" onclick="openPage('addCar', this, 'green')" >ADD CAR</button>
         <button class="tablink" onclick="openPage('updateCar', this, 'blue')">Update Cars</button>
-        <button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+        <button class="tablink" onclick="openPage('UsersTab', this, 'orange')" id="defaultOpen">Users</button>
 
 
 
@@ -118,7 +124,7 @@
         <!-- ------------this tab to list cars----------------- -->
         <div id="carList" class="tabcontent">
 
-            <div class="container mt-5">
+            <div class="carTableContainer mt-5">
                 <table class="table table-dark" id='dataTbl' style="text-align: center;">
                     <thead>
                         <tr>
@@ -303,9 +309,35 @@
             </div>
         </div>
 
+
+
+
+
+
         <div id="UsersTab" class="tabcontent">
-            <h3>About</h3>
-            <p>Who we are and what we do.</p>
+          <div class="carTableContainer mt-5">
+                <table class="table table-dark" id='dataTblUser' style="text-align: center;">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Car ID</th>
+                            <th scope="col">Car Name</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Fuel Type</th>
+                            <th scope="col">Model Year</th>
+                            <th scope="col">Price</th>
+
+                            <th scope="col">Delete This Item</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+
+            </div>
         </div>
 
         <script>
@@ -345,6 +377,8 @@
 
 
         <script src="/firebase.js"></script>
+
+        <script src="/user_list.js" type="module"></script>
         <script src="/car_list.js" type="module"></script>
         <script src="/car_management_beta.js" type="module"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
