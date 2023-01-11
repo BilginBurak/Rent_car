@@ -1,0 +1,122 @@
+
+.SignUpForm {
+    width: 80%;
+    height: auto;
+    padding: 30px;
+    text-align: center;
+    /*background: url(./signUpBackGround.jpg);   */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    border: 1px solid rgb(73, 61, 61);
+    background-color: var(--black-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.SignUpForm h1 {
+    color: white;
+    margin-top: 25px;
+    padding-bottom: 25px;
+    font-size: 50px;
+}
+
+.SignUpForm input {
+    display: block;
+    width: 30%;
+    height: 50px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border: none;
+
+}
+
+.SignUpForm .txt {
+    margin: 25px 0px;
+    border-radius: 10px;
+}
+
+.SignUpFormz .btn {
+    color: white;
+    font-size: 15px;
+    border-radius: 40px 10px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    background-color: green;
+    cursor: pointer;
+    transition: 0.5s;
+    display: block;
+
+}
+
+.btn:hover {
+    background-color: gold;
+    color: black;
+    transform: scale(0.90);
+
+}
+
+.SignUpForm p {
+    color: white;
+}
+
+.SignUpForm a {
+    color: blue;
+}
+
+.input_values {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.input_btns {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.SignUpFormz {
+
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+
+
+
+
+
+
+.imgs {
+    height: 80px;
+    width: 100px;
+    border: 1px black;
+    margin: 5px;
+}
+
+.imagesDivStyle {
+    width: 100%;
+    padding: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px gray;
+    padding: 5px;
+}
+.imageDiv{
+    
+}

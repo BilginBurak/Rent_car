@@ -62,24 +62,7 @@
     import { getDatabase, ref, set, onValue, update, remove, child, get } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 
 
-    // write data
-    /*submit.addEventListener('click',(e) => {
-        var carname = document.getElementById('carname').value;  
-        var Id_car = document.getElementById('ID_car').value;  
-        var year = document.getElementById('year').value;  
-        
-        const carid = push(child(ref(database), 'Cars/')).key;
-        
-        set(ref(database, 'Cars/' + carid), {
-            carname: carname,
-            ID_car: ID_car,
-            year : year
-        });
-        alert('saved');
-    });
-    */
-
-
+    
     // read data
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
@@ -121,11 +104,6 @@
         }, {
             onlyOnce: true
         });
-
-
-
-
-
 
 
     };

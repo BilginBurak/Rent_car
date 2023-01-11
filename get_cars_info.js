@@ -13,12 +13,12 @@ appId: "1:307208189325:web:49734a018255314d7039c4"
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
-window.onload = resfreshtable();
+window.onload = getCars();
 //Araba Listeleme
 
-function resfreshtable() {
-    $('#dataTbl td').remove();
-    var rowNum = 0;
+function getCars() {
+
+   
     const dbRef = ref(database, 'Cars/');
 
     onValue(dbRef, (snapshot) => {
@@ -26,8 +26,10 @@ function resfreshtable() {
             const childKey = childSnapshot.key;
             const childData = childSnapshot.val();
             // ...
-            rowNum += 1;
+           
 
+
+            /*
             var row = "<div class='carsproducts' id='carsproducts'><div class='carnameDiv'> <h3 ><span class='carname' id='carname'>"
                 + childData.carname + "</span></h3></div> <div><img src='"
                 +childData.CarsLinks+"' class='thumb' alt='' id='Carimage'></div>" 
@@ -39,8 +41,7 @@ function resfreshtable() {
                 +childData.licenseType+"</span> </li></ul></div>  <div><h4>For a Day:<span id='price'>"
                 +childData.price+"$</span></h4></div> <div>";
 
-
-
+*/
 
             var row2= "<div class='carsproducts' id='carsproducts'><div class='carnameDiv'> <h2 ><strong class='carname' id='carname'>"
             + childData.carname + "</strong></h2><div class='categoryheader'><h4>"

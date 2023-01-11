@@ -39,141 +39,271 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);*/
 
-// Initialize variables
-const auth = firebase.auth()
-const database = firebase.database()
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithPopup, signInWithRedirect, getRedirectResult, GoogleAuthProvider, TwitterAuthProvider } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import { getDatabase, ref, set, onValue, update, remove, child, get } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
 
-// Set up our register function
-function register () {
-  // Get all our input fields
-  email = document.getElementById('email').value
-  password = document.getElementById('password').value
-  full_name = document.getElementById('full_name').value
-  username = document.getElementById('username').value
-  milk_before_cereal = document.getElementById('milk_before_cereal').value
 
-  // Validate input fields
-  if (validate_email(email) == false || validate_password(password) == false) {
-    alert('Email or Password is Outta Line!!')
-    return
-    // Don't continue running the code
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const auth = getAuth(app);
+const database = getDatabase(app);
+
+const submitButton = document.getElementById("submit");
+const signupButton = document.getElementById("sign-up");
+const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
+const main = document.getElementById("main");
+const createacct = document.getElementById("create-acct")
+
+const username = document.getElementById("username").value;
+
+const signupPasswordIn = document.getElementById("password-signup");
+const confirmSignUpPasswordIn = document.getElementById("confirm-password-signup");
+const singupemailIn = document.getElementById("email-signup");
+const createacctbtn = document.getElementById("create-acct-btn");
+
+const forgetpass = document.getElementById('forgetpass');
+
+const returnBtn = document.getElementById("return-btn");
+
+var email, password, signupEmail, signupPassword, confirmSignupEmail, confirmSignUpPassword;
+
+
+
+
+
+
+
+
+
+createacctbtn.addEventListener("click", function () {
+  var isVerified = true;
+  var rank = 1;
+  var fullName = document.getElementById("fullName").value;
+  var username = document.getElementById("username").value;
+
+  signupEmail = singupemailIn.value;
+  signupPassword = signupPasswordIn.value;
+  confirmSignUpPassword = confirmSignUpPasswordIn.value;
+  if (signupPassword != confirmSignUpPassword) {
+    window.alert("Password fields do not match. Try again.")
+    isVerified = false;
   }
-  if (validate_field(full_name) == false || validate_field(username) == false || validate_field(milk_before_cereal) == false) {
-    alert('One or More Extra Fields is Outta Line!!')
-    return
+
+  if (signupEmail == null || signupPassword == null || confirmSignUpPassword == null) {
+    window.alert("Please fill out all required fields.");
+    isVerified = false;
   }
- 
-  // Move on with Auth
-  auth.createUserWithEmailAndPassword(email, password)
-  .then(function() {
-    // Declare user variable
-    var user = auth.currentUser
 
-    // Add this user to Firebase Database
-    var database_ref = database.ref()
+  if (isVerified) {
+    createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        // ...
 
-    // Create User data
-    var user_data = {
-      email : email,
-      full_name : full_name,
-      username : username,
-      milk_before_cereal : milk_before_cereal,
-      last_login : Date.now(),
-      rank: 111
-    }
 
-    // Push to Firebase Database
-    database_ref.child('users/' + user.uid).set(user_data)
+        // Create User data
+        var user_data = {
+          email: signupEmail,
+          full_name: fullName,
+          password: signupPassword,
+          username: username,
+          last_login: Date.now(),
+          rank: rank
+        }
+        console.log(user.uid + " --- " + auth.currentUser.uid)
 
-    // DOne
-    alert('User Created!!')
-  })
-  .catch(function(error) {
-    // Firebase will use this to alert of its errors
-    var error_code = error.code
-    var error_message = error.message
+        // Push to Firebase Database
+        set(ref(database, 'users/' + auth.currentUser.uid), user_data)
+        window.alert("Success! Account created.  " + fullName);
 
-    alert(error_message)
-  })
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+        //window.alert("Error occurred. Try again.");
+        alert(errorMessage)
+      });
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var passcounter = 0;
+
+submitButton.addEventListener("click", function () {
+  email = emailInput.value;
+  console.log(email);
+  password = passwordInput.value;
+  console.log(password);
+
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      console.log("Success! Welcome back!");
+      window.alert("Success! Welcome back!");
+      // ...
+
+      // Declare user variable
+      console.log(user.uid)
+
+
+      update(ref(database, 'users/' + user.uid), { last_login: Date.now() });
+      onValue(ref(database, '/users/' + user.uid), (snapshot) => {
+        var rank1 = snapshot.val().rank;
+        console.log(rank1)
+        if (rank1 == 1)
+          location.href = "index_beta.html";
+        if (rank1 == 0)
+          location.href = "car_management.html"
+        // ...
+      });
+
+
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log("Error occurred. Try again.");
+      window.alert('Wrong Password, please try again!');
+      passcounter++;
+      console.log(passcounter)
+      if (passcounter >= 1)
+        showforgetpass();
+
+
+    });
+});
+
+
+
+
+
+
+
+
+function showforgetpass() {
+  document.getElementById('forgetpass').style.display = "block";
 }
 
-// Set up our login function
-function login () {
-  // Get all our input fields
-  email = document.getElementById('email').value
-  password = document.getElementById('password').value
-
-  // Validate input fields
-  if (validate_email(email) == false || validate_password(password) == false) {
-    alert('Email or Password is Outta Line!!')
-    return
-    // Don't continue running the code
-  }
-
-  auth.signInWithEmailAndPassword(email, password)
-  .then(function() {
-    // Declare user variable
-    var user = auth.currentUser
-
-    // Add this user to Firebase Database
-    var database_ref = database.ref()
-
-    // Create User data
-    var user_data = {
-      last_login : Date.now()
-    }
-
-    // Push to Firebase Database
-    database_ref.child('users/' + user.uid).update(user_data)
-
-    // DOne
-    //window.location.href = "index.html";
-    window.location.replace("index.html");
-    alert('User Logged In!!')
-
-
-  })
-  .catch(function(error) {
-    // Firebase will use this to alert of its errors
-    var error_code = error.code
-    var error_message = error.message
-
-    alert(error_message)
-  })
-}
 
 
 
 
-// Validate Functions
-function validate_email(email) {
-  expression = /^[^@]+@\w+(\.\w+)+\w$/
-  if (expression.test(email) == true) {
-    // Email is good
-    return true
-  } else {
-    // Email is not good
-    return false
-  }
-}
 
-function validate_password(password) {
-  // Firebase only accepts lengths greater than 6
-  if (password < 6) {
-    return false
-  } else {
-    return true
-  }
-}
 
-function validate_field(field) {
-  if (field == null) {
-    return false
-  }
 
-  if (field.length <= 0) {
-    return false
-  } else {
-    return true
-  }
-}
+
+
+
+
+
+
+signupButton.addEventListener("click", function () {
+  main.style.display = "none";
+  createacct.style.display = "block";
+});
+
+returnBtn.addEventListener("click", function () {
+  main.style.display = "block";
+  createacct.style.display = "none";
+});
+
+
+
+
+forgetpass.addEventListener("click", function () {
+
+
+  var email = document.getElementById('email').value;
+  sendPasswordResetEmail(auth, email)
+    .then(() => {
+      // Password reset email sent!
+      alert('link sended to reset your password');
+      // ..
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+      // ..
+    });
+});
+
+const providerTwitter = new TwitterAuthProvider();
+const providerGoogle = new GoogleAuthProvider();
+
+
+
+google_login.addEventListener("click", function () {
+
+
+  signInWithPopup(auth, providerGoogle)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      console.log(user.displayName + ' -- ' + token + ' -- ' + credential)
+      alert(user.displayName + ' welcome back. you are redirecting');
+      location.replace("index.html");
+      // ...
+    }).catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+      alert(credential + ' -- ' + errorMessage + ' -- ' + email)
+    });
+});
+
+
+
+twitter_login.addEventListener("click", function () {
+
+  signInWithRedirect(auth, providerTwitter)
+
+
+
+});
+
+
+
+
+forgetpass.addEventListener('click', (e) => {
+
+  sendPasswordResetEmail(auth, email)
+    .then(() => {
+      console.log('Password reset email sent successfully');
+
+    })
+    .catch(error => {
+      console.error(error);
+    })
+})

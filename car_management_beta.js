@@ -1,10 +1,9 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
-import { getDatabase, ref, set, onValue, update, remove, child, get } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-database.js";
-import { getStorage, ref as sRef, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-storage.js"
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+import { getDatabase, ref, set, onValue, update, remove, child, get } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+import { getStorage, ref as sRef, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
 
 // Initialize Firebase
 
@@ -17,11 +16,9 @@ const firebaseConfig = {
     messagingSenderId: "307208189325",
     appId: "1:307208189325:web:49734a018255314d7039c4",
     measurementId: "G-5HKTNKYZ9R"
-};
+  };
 
-
-
-
+  
 var firebaseCarId;
 
 
@@ -61,6 +58,7 @@ selBtn.addEventListener('click', (e) => {
     let inp = document.createElement('input');
     inp.type = 'file';
     inp.multiple = 'multiple';
+    inp.id = 'imgmultiselector'
     inp.click();
     inp.onchange = (e) => {
 
@@ -263,30 +261,30 @@ btnAdd.addEventListener('click', (e) => {
 // get data
 btnGet.addEventListener('click', (e) => {
 
-    var ID_car = document.getElementById('ID_car').value;
+    var ID_carU = document.getElementById('ID_carU').value;
 
-    const starCountRef = ref(database, 'Cars/' + ID_car);
+    const starCountRef = ref(database, 'Cars/' + ID_carU);
     onValue(starCountRef, (snapshot) => {
         var data = snapshot.val(); // data = all data on firebse     
 
 
-        document.getElementById('ID_car').value = ID_car;
-        document.getElementById('carname').value = data.carname;
-        document.getElementById('year').value = data.year;
-        document.getElementById('price').value = data.price;
-        document.getElementById('category').value = data.category;
-        document.getElementById('fuelType').value = data.fuelType;
+        document.getElementById('ID_carU').value = ID_carU;
+        document.getElementById('yearU').value = data.year;
+        document.getElementById('carnameU').value = data.carname;
+        document.getElementById('priceU').value = data.price;
+        document.getElementById('categoryU').value = data.category;
+        document.getElementById('fuelTypeU').value = data.fuelType;
 
 
-        document.getElementById('licenseType').value = data.licenseType;
-        document.getElementById('capacity').value = data.capacity;
-        document.getElementById('gearType').value = data.gearType;
+        document.getElementById('licenseTypeU').value = data.licenseType;
+        document.getElementById('capacityU').value = data.capacity;
+        document.getElementById('gearTypeU').value = data.gearType;
 
+        alert("Verilriniz getirildi");
 
     });
 
     if (document.getElementById('carname').value == "" && document.getElementById('ID_car').value == "") alert("id giriniz");
-    else alert("Verilriniz getirildi");
 
 
 
@@ -335,6 +333,7 @@ btnUpdate.addEventListener('click', (e) => {
 });
 
 /// remove data
+/*
 btnDelete.addEventListener('click', (e) => {
     var id = document.getElementById('ID_car').value;
 
@@ -343,10 +342,34 @@ btnDelete.addEventListener('click', (e) => {
 });
 
 
+*/
 
 
+/*
+btnClean.addEventListener('click', (e)=>{
+    document.getElementById('carname').value = "";
+    document.getElementById('year').value = "";
+    document.getElementById('price').value = "";
+    document.getElementById('category').value = "none";
+    document.getElementById('fuelType').value = "none";
 
-btnClean.addEventListener('click', (e) => {
+    document.getElementById('licenseType').value = "";
+    document.getElementById('capacity').value = "";
+    document.getElementById('gearType').value = "none";
+
+    ImageLinksArray = [];
+    imgDiv.innerHTML ="";
+    imgDiv.classList.remove('imagesDivStyle');
+
+    
+})
+
+*/
+
+
+var btnClear= document.getElementById('btnClean');
+btnClear.onclick = cleanitems;
+function cleanitems(){
     document.getElementById('ID_car').value = "";
     document.getElementById('carname').value = "";
     document.getElementById('year').value = "";
@@ -358,20 +381,14 @@ btnClean.addEventListener('click', (e) => {
     document.getElementById('capacity').value = "";
     document.getElementById('gearType').value = "none";
 
+    ImageLinksArray = [];
+    imgDiv.innerHTML ="";
+    imgDiv.classList.remove('imagesDivStyle');
+
+    
+}
 
 
-    let q = document.getElementById('mainform');
-    var randomColor = Math.floor(Math.random() * 16777215).toString(16);
-
-    var i = (Math.random() * 255).toString(16);
-    var l = (Math.random() * 255).toString(16);
-    var m = (Math.random() * 255).toString(16);
-    //document.getElementById('mainform').style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-    //        document.getElementById('btnDelete').style.backgroundColor =  '#' + i + '' + ''+l+ ''+m; 
-    document.getElementById('btnDelete').style.backgroundColor = '#' + i + '' + l + '' + m;
-
-
-});
 
 
 

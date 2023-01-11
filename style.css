@@ -22,26 +22,6 @@ body {
 }
 
 .header {
-  width: 90%;
-  margin: 0 2% 0 5%;
-}
-
-.navbarz {
-  position: sticky;
-  top: 1rem;
-
-  margin: 0;
-  padding-right: 1%;
-  z-index: 100;
-  font-size: 2rem;
-
-  display: flex;
-  justify-items: center;
-  height: 8rem;
-
-}
-
-.navbarz nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -49,7 +29,62 @@ body {
   background-color: whitesmoke;
   border-radius: 30rem;
   box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.185);
+  width: 100%;
+  
 }
+
+.navbarz {
+  position: sticky;
+  top: 1rem;
+
+  margin: 0 1% 0 3%;
+  
+  z-index: 100;
+  font-size: 2rem;
+
+  display: flex;
+  justify-items: center;
+  height: 8rem;
+max-width:100%;
+min-width: 80%;
+}
+
+
+
+
+.login_nav {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 6rem;
+  background: whitesmoke;
+  padding: 10px;
+margin-left: 2%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  transition: all 0.5s ease;
+
+
+ 
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.185);
+
+  cursor: pointer;
+}
+
+.login_nav:hover {
+
+  transition: all 0.5s ease;
+ 
+ 
+  scale:120%;
+  
+}
+
+
+
+
+
 
 .header_menu li a {
   border-bottom: 0.2rem solid transparent;
@@ -206,34 +241,6 @@ body {
   font-size: 2rem;
 }
 
-
-.login_nav {
-  width: 8rem;
-  height: 8rem;
-  border-radius: 6rem;
-  background: whitesmoke;
-  padding: 10px;
-
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-
- 
-
- 
-  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.185);
-
-  cursor: pointer;
-}
-
-.login_nav:hover {
-
-  transition: none 1s ease;
- 
- 
-  scale:120%;
-  
-}
 
 
 

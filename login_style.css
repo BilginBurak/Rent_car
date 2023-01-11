@@ -1,135 +1,93 @@
-html, body {
-  width: 100%;
-  height: 100%;
-  background:gray;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  border: none;
-  outline: none;
-}
-#content_container {
-  width: 30%;
-  height: 70%;
+  font-family: sans-serif;
 }
 
-#form_container {
+body {
+  background-color: #8caf2b;
+  height: max-content;
+}
+
+h1 {
+  margin-bottom: 8%;
+  text-align: center;
+  font-family: "Fredoka One", cursive;
+  color: #0583D2;
+  letter-spacing: 0.1em;
+}
+
+p {
+  margin-top: 5%;
+  margin-bottom: 5%;
   width: 100%;
-  height: 100%;
-
-  background-color: #061637;
-  box-shadow: 0 0 50px -20px #000;
-  border-radius: 2%;
-
-  overflow: hidden;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
 }
 
-#form_header_container {
-  width: 100%;
-  height: 5%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  float: left;
-
-  padding: 20px;
-  padding-bottom: 30px;
-  padding-top: 30px;
- color: white;
-  border-bottom: 1px solid transparent;
-  background: #000;
-}
-
-#form_header {
-  display: inline-block;
-  font-size: 15px;
-  font-family: Bowlby One SC;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-
-
-  background: -webkit-linear-gradient(25deg, #FFBE0B, #FB5607, #FF006E, #8338EC, #3A86FF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-#form_content_container {
-  width: 100%;
-  height: 90%;
-
-  float: left;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding-top: 30px;
-}
-
-#form_content_inner_container {
-  width: 75%;
-  height: 100%;
-
-  float: left;
-
+p span {
+  background:#fff;
+  padding:0 10px;
 }
 
 input {
-  width: 100%;
-  height: 40px;
-
-  padding-left: 10px;
-  margin-bottom: 20px;
-
-  background: #000;
-  font-family: Montserrat;
-  font-weight: 500;
-  color: #fff;
-  font-size: 12px;
-
-  border-bottom: 2px solid transparent;
-  border-top-left-radius: 2%;
-  border-top-right-radius: 2%;
-  border-image: -webkit-linear-gradient(25deg, #FFBE0B, #FB5607, #FF006E, #8338EC, #3A86FF) 1;
+  margin-bottom: 3%;
 }
 
-#button_container {
-  width: 100%;
-  height: 10%;
-
-  background-image: linear-gradient(75deg, #FFBE0B, #FB5607 50%, #FF006E 50%, #8338EC);
-  color: #fff;
-
-  float: left;
-
-  margin-top: 5px;
+input:last-of-type {
+  margin-bottom: 0;
 }
 
-#button_container button {
-  width: 50%;
-  height: 100%;
-  float: left;
+input, button {
+  padding: 3%;
+  width: 100%;
+}
 
-  background: transparent;
-  color: inherit;
+.login-container {
+  background-color: white;
+  padding: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  /* horizontal align */
+  width: 40vw;
+  margin-left: 30vw;
+  /* vertical align */
+  height: auto;
+  margin-top: 15vh;
+}
 
-  font-family: Montserrat;
-  letter-spacing: 1px;
-  font-weight: 900;
-  font-size: 12px;
+#submit, #create-acct-btn {
+  background-color: #0583D2;
+  color: white;
+  border: none;
+  margin-top: 5%;
+}
 
+button:hover {
   cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#sign-up {
+  border: none;
+}
+
+#create-acct {
+  display: none;
+}
+
+#return-btn {
+  background: none;
+  color: grey;
+  text-decoration: underline;
+  border: none;
+  margin-top: 3%;
+}
+
+#forgetpass{
+  display: none;
 }
