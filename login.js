@@ -112,7 +112,7 @@ createacctbtn.addEventListener("click", function () {
           full_name: fullName,
           password: signupPassword,
           username: username,
-          last_login: Date.now(),
+          last_login: Date(),
           rank: rank
         }
         console.log(user.uid + " --- " + auth.currentUser.uid)
@@ -169,7 +169,7 @@ submitButton.addEventListener("click", function () {
       console.log(user.uid)
 
 
-      update(ref(database, 'users/' + user.uid), { last_login: Date.now() });
+      update(ref(database, 'users/' + user.uid), { last_login: Date() });
       onValue(ref(database, '/users/' + user.uid), (snapshot) => {
         var rank1 = snapshot.val().rank;
         console.log(rank1)
@@ -268,7 +268,16 @@ google_login.addEventListener("click", function () {
       const user = result.user;
       console.log(user.displayName + ' -- ' + token + ' -- ' + credential)
       alert(user.displayName + ' welcome back. you are redirecting');
-      location.replace("index.html");
+      update(ref(database, 'users/' + user.uid), { last_login: Date() });
+      onValue(ref(database, '/users/' + user.uid), (snapshot) => {
+        var rank1 = snapshot.val().rank;
+        console.log(rank1)
+        if (rank1 == 1)
+          location.href = "index_beta.html";
+        if (rank1 == 0)
+          location.href = "car_management.html"
+        // ...
+      });
       // ...
     }).catch((error) => {
       // Handle Errors here.
