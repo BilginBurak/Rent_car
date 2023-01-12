@@ -30,7 +30,7 @@ var database = getDatabase(app);
              var rankSelector = " <select style='width: 90px; text-align: center;' data-keyuser='" + childKey + "' data-userdata='"+childData.rank+"' id='rankSelector"+rowNum+"' class='btn btn-danger btn-block rankSelector' > <option value='1' >USER</option> <option value='0'>ADMIN</option>   </select>"
              
           
-             
+            
              
              var row =
              "<tr><td>" + rowNum +

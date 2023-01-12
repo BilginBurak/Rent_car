@@ -46,9 +46,10 @@ import { getDatabase, ref, set, onValue, update, remove, child, get } from "http
 
 
 
-const app = initializeApp(firebaseConfig);
+
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
+const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 const submitButton = document.getElementById("submit");
