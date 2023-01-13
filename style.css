@@ -103,7 +103,7 @@ margin-left: 2%;
   /*font-size: x-large;*/
   transition: 0.1s ease-in-out;
   padding: 7px;
-  margin: 0 10px;
+  margin: 0 15px;
 
   color: tomato;
   
@@ -112,13 +112,13 @@ margin-left: 2%;
 }
 
 .header_menu li:hover {
-  opacity: 0.3;
+  opacity: 0.5;
   
   background-color: darkslateblue;
   transition: 0.3s ease-in-out;
   align-items: center;
   align-self: center;
-  scale: 120%;
+  scale: 125%;
 }
 
 
