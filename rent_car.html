@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rent Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        html {
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            /*background-color: #f0f1f3;*/
+            background-color: #f5f0bb18;
+        }
+
+        .carRentContainer {
+            display: flex;
+            flex-direction: column;
+            padding: 2.8%;
+            font-size: 16px;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .carRentContainer option,
+        .carRentContainer select {
+            font-size: 16px;
+        }
+
+        .pickUpdiv {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+           
+            width: 90%;
+            height: 120px;
+            background-color: #c4dfaa6b;
+        }
+
+        .pickupchild {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+
+        }
+
+        .pickupchild input,
+        .pickupchild select {
+            height: 5rem;
+            width: 25rem;
+            padding-left:10px;
+            border-radius: 5px;
+            border:solid green 1px;
+        }
+
+        .carRentPersonalInfoContainer {
+            
+            margin: 0 10%;
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+            height: 580px;
+            background-color: #90c8ac75;
+
+
+
+        }
+
+        .form_wrap {
+           
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 430px;
+            height: 500px;
+
+        }
+
+        .form_wrap input {
+            width: 50%;
+            height: 25px;
+        }
+
+        textarea {
+            width: 50%;
+            height: 70px;
+        }
+
+        
+
+        .form-group {
+            display: flex;
+            width: 500px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .form-group label{
+            width: 50%;
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        .formButtons {
+        
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+            height: 270px;
+            width: 200px;
+            margin-top: 230px;
+            margin-right: 40px;
+
+        }
+
+        .formButtons button {
+            height: 60px;
+            margin-top: 20px;
+            border-radius: 20px;
+            transition: 0.5s all ease-in-out;
+            font-size: 16px;
+
+        }
+        .formButtons button:hover{
+            background-color: yellowgreen;
+            opacity: 0.6;
+            scale: 105%;
+            transition: 0.3s all ease-in-out;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="navbarz">
+
+        <nav class="header">
+            <div class="login_icon">
+
+                <img src="/images/rent-car-low-resolution-logo-color-on-transparent-background.png" alt="Cars Photo">
+
+            </div>
+
+            <ul class="header_menu">
+                <li>
+                    <a href="#HOME">HOME</a>
+                </li>
+                <li>
+                    <a href="about.html">about</a>
+                </li>
+                <li>
+                    <a href="index_beta.html#AllProducts">cars</a>
+                </li>
+                <li>
+                    <a href="gallery.html">shows</a>
+                </li>
+            </ul>
+        </nav>
+
+
+
+    </div>
+
+
+    <div class="carRentContainer">
+        <div class="pickUpdiv">
+
+            <div class="pickupchild">
+                <label for="">PICK UP LOCATION</label>
+                <select name="pickUpLocation" id="pickUpLocation">
+                    <option value="">Select Pick Up Office</option>
+                    <option value="Mersin">Mersin</option>
+                    <option value="Adana">Adana</option>
+                    <option value="Ankara">Ankara</option>
+                    <option value="Istanbul">Istanbul</option>
+                </select>
+
+            </div>
+
+            <div class="pickupchild">
+                <label for="">PICK UP DATE</label>
+                <input type="date" name="" id="pickup_date">
+            </div>
+
+            <div class="pickupchild">
+                <h2><i class="fa-solid fa-arrow-right-long"></i></h2>
+            </div>
+
+            <div class="pickupchild">
+                <label for="">PICK UP LOCATION</label>
+                <select name="returnLocation" id="returnLocation">
+                    <option value="">Select Drop Off Office</option>
+                    <option value="Mersin">Mersin</option>
+                    <option value="Adana">Adana</option>
+                    <option value="Ankara">Ankara</option>
+                    <option value="Istanbul">Istanbul</option>
+                </select>
+
+            </div>
+
+
+
+            <div class="pickupchild">
+                <label for="">RETURN DATE</label>
+                <input type="date" name="" id="return_date">
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="carRentPersonalInfoContainer">
+
+        <div class="carSummaryCard" style=" font-size: 16px; width: 400px; height: 500px; display: flex; flex-direction: column; align-items: center; justify-content: space-around;">
+
+            <div style="border: 1px red solid; width: 320; height: 200px; display: flex; justify-content: center; align-items: center; ">
+                <img src="/images/cars/fiat-doblo.png" alt="ürün resmi" style="border: 1px solid green; width: 320px; max-height: 100%;">
+
+            </div>
+
+            
+            
+            <div>
+                <h2>Fiat Doblo</h2>
+            </div>
+            
+                <ul style="list-style:disc;">
+                    <li>asdasdasdasds</li>
+                    <li>asdfsdfs</li>
+                    <li>afdgfdgd</li>
+                    <li>atrevw</li>
+                    <li>nbvbbxcv</li>
+                </ul>
+            
+
+            
+
+        </div>
+
+
+
+
+
+
+        <div class="form_wrap">
+
+
+
+
+
+            <div class="form-group">
+                <label for="" class="form-label">First Name*:</label>
+                <input autocomplete="off" name="FirstName" id="firstNametxt">
+            </div>
+
+            <div class="form-group">
+                <label for="" class="form-label">Last Name*:</label>
+                <input autocomplete="off" name="LastName" id="lastNametxt">
+            </div>
+
+
+
+
+
+
+            <div class="form-group">
+                <label for="" class="form-label">Phone Number*:</label>
+                <input type="tel" autocomplete="off" maxlength="10" id="formPhonetxt" name="Phone"
+                    placeholder="(5xx) xxx xx xx">
+            </div>
+
+
+            <div class="form-group">
+                <label for="" class="form-label">E-Mail Address*:</label>
+                <input type="email" id="formEmailtxt" autocomplete="on" name="Email">
+            </div>
+
+
+
+
+
+
+            <div class="form-group">
+                <label for="" class="form-label">Date of Birth*:</label>
+                <input type="date" name="BirthDateSelect" id="formBirthtxt" placeholder="GG/AA/YYYY" autocomplete="off">
+
+            </div>
+            <div class="form-group">
+                <label for="" class="form-label">Driving license date:</label>
+                <input name="formLicensetxt" id="formLicensetxt" placeholder="GG/AA/YYYY" maxlength="10">
+
+            </div>
+
+
+
+
+
+            <div class="form-group">
+                <label for="">TC Identity number:</label>
+                <input autocomplete="off" id="TCKN" name="TCKN">
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="" class="form-label">Address*:</label>
+                <textarea maxlength="140" name="Address" required=""></textarea>
+
+            </div>
+
+        </div>
+
+
+        <div class="formButtons">
+
+            <div>    
+                <p style="font-size: 18px; text-align: center;">For <span>5</span> Days</p>
+                <p style="font-size: 20px; text-align: center;">TOTAL: <strong>500</strong>   <span style="text-decoration: line-through;">400</span> </p>
+                
+            </div>
+            <div style="display: flex; flex-direction: column;">
+
+                <button>Clear Form</button>
+                <button>Submit</button>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
