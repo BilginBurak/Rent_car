@@ -1,15 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
 import { getDatabase, set, ref, push, child, onValue, get } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-database.js";
 
-/*
-var firebaseConfig = {
-    apiKey: "AIzaSyD8huoUJahSSgfeVrduetfga8VcAn3ohUA",
-authDomain: "rent-car-b7bab.firebaseapp.com",
-projectId: "rent-car-b7bab",
-storageBucket: "rent-car-b7bab.appspot.com",
-messagingSenderId: "307208189325",
-appId: "1:307208189325:web:49734a018255314d7039c4"
-};*/
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
@@ -60,7 +51,7 @@ function getCars() {
             +childData.year+"</strong></div>"
             +"<div class='carbottomdetail'><p>Gear</p> <strong>"
             +childData.gearType+"</strong></div> </div>"
-            +"<button data-key='" + childKey + "' class='rentbtn'>Rent This Car</button></div></div> ";
+            +"<button class='rentbtn' data-carid='" + childKey + "'>Rent This Car</button></div></div> ";
 
 
 
@@ -78,9 +69,13 @@ function getCars() {
 
 
 $("body").on("click", ".rentbtn", function () {
-    var $keyCar = $(this).data("key");
+    
+    var $keyCar = $(this).data("carid");
+    window.localStorage.setItem("carid",$keyCar);
+    //alert( window.localStorage.getItem("carid"));
     //alert("Are you sure you want to delete the tool?");
     
 console.log($keyCar)
+location.href= 'rent_car.html';
 
 });
