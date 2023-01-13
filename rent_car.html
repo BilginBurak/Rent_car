@@ -163,7 +163,9 @@
         .carCardImage {
             width: 320px;
             max-height: 100%;
-        }.carProperties {
+        }
+
+        .carProperties {
             display: flex;
             text-align: center;
             align-items: center;
@@ -310,14 +312,14 @@
 
             function getCars() {
 
-                var idCar= window.localStorage.getItem("carid");
+                var idCar = window.localStorage.getItem("carid");
 
-            
-     //alert("Are you sure you want to delete the tool?");
- 
-     console.log(idCar);
-     
-    
+
+                //alert("Are you sure you want to delete the tool?");
+
+                console.log(idCar);
+
+
 
 
                 const starCountRef = ref(database, 'Cars/' + idCar);
@@ -343,21 +345,21 @@
                         + "</ul>";
 
 
-                        var row = "<div> <h2>" + data.carname + "</h2> </div>"
-                        +"<div class=" + 'carCardImgDiv' + " >"
+                    var row = "<div> <h2>" + data.carname + "</h2> </div>"
+                        + "<div class=" + 'carCardImgDiv' + " >"
                         + "<img class=" + 'carCardImage' + " src=" + data.CarsLinks + " alt='product image not found' > </div>"
-                        +"<div class='pricetag' ><h3>$<strong id='pricetag'>"
-            +data.price+"</strong>/Day</h3></div>"
-            + "<div  class='carProperties'> "
-            +"<div class='carbottomdetail'><p>Capacity</p> <strong>"
-            +data.capacity+"</strong></div>"
-            +"<div class='carbottomdetail'><p>Fuel</p> <strong>"
-            +data.fuelType+"</strong></div>"
-            +"<div class='carbottomdetail'><p>Year</p> <strong>"
-            +data.year+"</strong></div>"
-            +"<div class='carbottomdetail'><p>Gear</p> <strong>"
-            +data.gearType+"</strong></div> </div>";
-           
+                        + "<div class='pricetag' ><h3>$<strong id='pricetag'>"
+                        + data.price + "</strong>/Day</h3></div>"
+                        + "<div  class='carProperties'> "
+                        + "<div class='carbottomdetail'><p>Capacity</p> <strong>"
+                        + data.capacity + "</strong></div>"
+                        + "<div class='carbottomdetail'><p>Fuel</p> <strong>"
+                        + data.fuelType + "</strong></div>"
+                        + "<div class='carbottomdetail'><p>Year</p> <strong>"
+                        + data.year + "</strong></div>"
+                        + "<div class='carbottomdetail'><p>Gear</p> <strong>"
+                        + data.gearType + "</strong></div> </div>";
+
 
                     $(row).appendTo('#carCardMain');
 

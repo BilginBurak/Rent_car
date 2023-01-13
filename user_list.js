@@ -82,14 +82,14 @@ var database = getDatabase(app);
      var $key = $(this).data("key");
      //alert("Are you sure you want to delete the tool?");
      
-     var answer = window.confirm("Are you sure you want to delete the tool?" + $key);
+     var answer = window.confirm("Are you sure you want to delete the user?" + $key);
      if (answer) {
-         //database.ref('/Cars/' + $key).remove();
+         //database.ref('users/' + $key).remove();
          remove(ref(database, 'users/' + $key));
          alert("removed");
-     }
-     resfreshtable();
-
+     
+        }
+        resfreshtable();
 
 
 

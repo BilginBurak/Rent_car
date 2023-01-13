@@ -39,16 +39,15 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);*/
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithPopup, signInWithRedirect, getRedirectResult, GoogleAuthProvider, TwitterAuthProvider } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 import { getDatabase, ref, set, onValue, update, remove, child, get } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
 
 
 
-const app = initializeApp(firebaseConfig);
 
-const analytics = getAnalytics(app);
+const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const database = getDatabase(app);
 
@@ -177,7 +176,7 @@ submitButton.addEventListener("click", function () {
         if (rank1 == 1)
           location.href = "index_beta.html";
         if (rank1 == 0)
-          location.href = "car_management.html"
+          location.href = "admin_panel.html"
         // ...
       });
 
@@ -190,7 +189,7 @@ submitButton.addEventListener("click", function () {
       window.alert('Wrong Password, please try again!');
       passcounter++;
       console.log(passcounter)
-      if (passcounter >= 1)
+      if (passcounter >= 3)
         showforgetpass();
 
 
@@ -269,14 +268,20 @@ google_login.addEventListener("click", function () {
       const user = result.user;
       console.log(user.displayName + ' -- ' + token + ' -- ' + credential)
       alert(user.displayName + ' welcome back. you are redirecting');
-      update(ref(database, 'users/' + user.uid), { last_login: Date() });
+      update(ref(database, 'users/' + user.uid), { 
+        last_login: Date(), 
+        rank: "1",
+        full_name:user.displayName,
+        email:user.email,
+        username: user.uid
+      });
       onValue(ref(database, '/users/' + user.uid), (snapshot) => {
         var rank1 = snapshot.val().rank;
         console.log(rank1)
         if (rank1 == 1)
           location.href = "index_beta.html";
         if (rank1 == 0)
-          location.href = "car_management.html"
+          location.href = "admin_panel.html"
         // ...
       });
       // ...
