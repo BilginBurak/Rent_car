@@ -173,6 +173,7 @@ submitButton.addEventListener("click", function () {
       onValue(ref(database, '/users/' + user.uid), (snapshot) => {
         var rank1 = snapshot.val().rank;
         console.log(rank1)
+        window.localStorage.setItem("userid",user.uid);
         if (rank1 == 1)
           location.href = "index_beta.html";
         if (rank1 == 0)

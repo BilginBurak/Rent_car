@@ -7,70 +7,72 @@ import { getStorage, ref as sRef, uploadBytesResumable, getDownloadURL } from "h
 const app = initializeApp(firebaseConfig);
 
 const database = getDatabase(app);
- 
- // read data
 
- window.onload = resfreshtable();
+// read data
 
-
-
- function resfreshtable() {
-     $('#dataTbl td').remove();
-     var rowNum = 0;
-     const dbRef = ref(database, 'Cars/');
-
-     onValue(dbRef, (snapshot) => {
-         snapshot.forEach((childSnapshot) => {
-             var childKey = childSnapshot.key;
-             const childData = childSnapshot.val();
-             // ...
-             rowNum += 1;
-
-             var removebtn = "<input data-key='" + childSnapshot.key + "'  class='btn btn-danger btn-block removeBtn' value='detete' id='btnDelete' type='button'></input>";
-             //var removeBtn_elem = "<td><button data-key='" + item.key + "' class='btn btn-danger btn-block removeBtn'>Sil</button></td>";
+window.onload = resfreshtable();
 
 
 
-             var row =
-                 "<tr><td>" + rowNum +
-                 "</td><td>" + childData.ID_car +
-                 "</td><td>" + childData.carname +
-                 "</td><td>" + childData.category +
-                 "</td><td>" + childData.fuelType +
-                 "</td><td>" + childData.year +
-                 "</td><td>" + childData.price +
-                 "</td><td>" + removebtn +
-                 "</td></tr>"
+function resfreshtable() {
+    $('#dataTbl td').remove();
+    var rowNum = 0;
+    const dbRef = ref(database, 'Cars/');
 
-             $(row).appendTo('#dataTbl');
+    onValue(dbRef, (snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+            var childKey = childSnapshot.key;
+            const childData = childSnapshot.val();
+            // ...
+            rowNum += 1;
 
-         });
-     }, {
-         onlyOnce: true
-     });
-
-
- };
+            var removebtn = "<input data-keyc='" + childSnapshot.key + "'  class='btn btn-danger btn-block removeBtn' value='detete' id='btnDelete' type='button'></input>";
+            //var removeBtn_elem = "<td><button data-key='" + item.key + "' class='btn btn-danger btn-block removeBtn'>Sil</button></td>";
 
 
 
+            var row =
+                "<tr><td>" + rowNum +
+                "</td><td>" + childData.ID_car +
+                "</td><td>" + childData.carname +
+                "</td><td>" + childData.category +
+                "</td><td>" + childData.fuelType +
+                "</td><td>" + childData.year +
+                "</td><td>" + childData.price +
+                "</td><td>" + removebtn +
+                "</td></tr>"
 
- $("body").on("click", ".removeBtn", function () {
-     var $key = $(this).data("key");
-     //alert("Are you sure you want to delete the tool?");
-     var id = $key;
-     var answer = window.confirm("Are you sure you want to delete the tool?" + $key);
-     if (answer) {
-         //database.ref('/Cars/' + $key).remove();
-         remove(ref(database, 'Cars/' + $key));
-         alert("removed");
-     }
-     resfreshtable();
+            $(row).appendTo('#dataTbl');
+
+        });
+    }, {
+        onlyOnce: true
+    });
+
+
+};
 
 
 
 
- });
+$("body").on("click", ".removeBtn", function () {
+    var $keyc = $(this).data("keyc");
+    //alert("Are you sure you want to delete the tool?");
+
+    var answer = window.confirm("Are you sure you want to delete the tool?" + $keyc);
+    if (answer) {
+        //database.ref('/Cars/' + $key).remove();
+        remove(ref(database, 'Cars/' + $keyc));
+        alert("removed");
+    }
+    resfreshtable();
+
+
+
+
+});
+
+
 
 
 

@@ -17,25 +17,6 @@ function getCars() {
             const childKey = childSnapshot.key;
             const childData = childSnapshot.val();
             // ...
-           
-
-
-            /*
-            var row = "<div class='carsproducts' id='carsproducts'><div class='carnameDiv'> <h3 ><span class='carname' id='carname'>"
-                + childData.carname + "</span></h3></div> <div><img src='"
-                +childData.CarsLinks+"' class='thumb' alt='' id='Carimage'></div>" 
-                + "<div><ul class='productsUl'><li>Koltuk Sayisi: <span id='seatSpn'>"
-                +childData.capacity+"</span></li> <li>Fuel Type: <span id='fuelSpn'>"
-                +childData.fuelType+"</span></li>  <li>Category: <span id='categorySpn'>"
-                +childData.category+"</span> </li>  <li>Year: <span id='yearSpn'>"
-                +childData.year+"</span></li>  <li>Ehliyet tipi: <span id='typeSpn'>"
-                +childData.licenseType+"</span> </li></ul></div>  <div><h4>For a Day:<span id='price'>"
-                +childData.price+"$</span></h4></div> <div>";
-
-*/
-
-
-
 
             var row2= "<div class='carsproducts' id='carsproducts'><div class='carnameDiv'> <h2 ><strong class='carname' id='carname'>"
             + childData.carname + "</strong></h2><div class='categoryheader'><h4>"
@@ -52,8 +33,6 @@ function getCars() {
             +"<div class='carbottomdetail'><p>Gear</p> <strong>"
             +childData.gearType+"</strong></div> </div>"
             +"<button class='rentbtn' data-carid='" + childKey + "'>Rent This Car</button></div></div> ";
-
-
 
 
             $(row2).appendTo('#AllProducts');
