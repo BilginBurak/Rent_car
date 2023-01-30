@@ -7,28 +7,35 @@
 </head>
 
 <body>
-  <div class="login-container">
-    <div id="main">
-      <h1>Sign In</h1>
-      <input id="email" type="text" placeholder="Email"></input>
-      <input id="password" type="password" placeholder="Password"></input>
-      <button id="submit">Submit</button>
-      <button id="forgetpass">Forget Password</button>
-      <p><span>or</span></p>
+  <div class="blur">
+<div class="background">
+  <video autoplay muted loop id="myVideo">
+    <source src="/images/videos/LOGIN BACK.mp4" type="video/mp4">
+  </video>
+</div>
+
+    <div class="login-container">
+      <div id="main">
+        <h1>Sign In</h1>
+        <input id="email" type="text" placeholder="Email"></input>
+        <input id="password" type="password" placeholder="Password"></input>
+        <button id="submit">Submit</button>
+        <button id="forgetpass">Forget Password</button>
+        <p><span>or</span></p>
+        
       <button id="google_login">Login with Google</button>
-      <button id="twitter_login">Login with Twitter</button>
-      <button id="github_login">Login with GitHub</button>
-
-      <p><span>have not account?</span></p>
+      
+      
+      <p><span>Have not account?</span></p>
       <button id="sign-up">Sign Up</button>
-
-
+      
+      
     </div>
-
+    
     <div id="create-acct">
       <h1>Create an Account</h1>
       <input id="fullName" type="text" placeholder="Full Name *"></input>
-
+      
       <input id="email-signup" type="email" placeholder="Email *"></input>
       <input id="username" type="text" placeholder="username"></input>
       <input id="password-signup" type="password" placeholder="Password *"></input>
@@ -37,6 +44,7 @@
       <button id="return-btn">Return to Login</button>
     </div>
   </div>
+</div>
   <script type="module" src="login.js"></script>
   <script src="firebase.js"></script>
 </body>

@@ -42,19 +42,7 @@ function getCars() {
         onlyOnce: true
     });
 
-    var getJSON = firebase.functions().httpsCallable('getJSON');
-    getJSON().then(function(result) {
-        console.log(JSON.stringify(result.data));
-    }).catch(function(error) {
-        // Getting the Error details.
-        var code = error.code;
-        var message = error.message;
-        var details = error.details;
-        console.log(details)
-        console.log(message)
-        // ...
-    });
-
+  
 }
 
 

@@ -34,29 +34,29 @@
             align-items: center;
             justify-content: space-evenly;
             flex-direction: column;
-            background-color: aliceblue;
+            background-color: rgb(199, 199, 199);
             border-radius: 50px;
             text-align: center;
             transition: all 0.4s ease-out;
-            
+
         }
 
-         .carsproducts:hover  {
+        .carsproducts:hover {
             border-color: blue;
-            background-color: rgb(255, 248, 239);
-           
+            background-color: rgb(173, 173, 173);
+
             transition: all 0.2s ease-in;
-            scale: 110% ;
-            
+            scale: 110%;
 
 
 
-           
 
 
-         
+
+
+
         }
-      
+
 
         .thumb {
             width: 300px;
@@ -117,8 +117,50 @@
             background-color: rgb(101, 64, 82);
         }
 
-    
-    
+
+
+        /* Style the video: 100% width and height to cover the entire window */
+        #myVideo {
+
+            margin-top: -250px;
+
+            height: 150vh;
+            z-index: -10000;
+        }
+
+        /* Add some content at the bottom of the video/page */
+        .contentss {
+           position: absolute;
+            bottom: 0;
+
+            color: #f1f1f1;
+            width: 100%;
+
+        }
+
+        /* Style the button used to pause/play the video */
+        #myBtn {
+            width: 70px;
+            height: 70px;
+            font-size: 30px;
+            padding: 10px;
+            border: none;
+            background: transparent;
+            color: slateblue;
+            cursor: pointer;
+            margin-left: 20px;
+            border-radius: 30px;
+            z-index: 500;
+        }
+
+        #myBtn:hover {
+            background: #ddd;
+            color: black;
+        }
+
+        .homevideo{
+            z-index: -5000;
+        }
     </style>
 
 
@@ -126,52 +168,73 @@
 
 <body>
 
+
+
+    <script>
+        // Get the video
+        var video = document.getElementById("myVideo");
+
+        // Get the button
+        var btn = document.getElementById("myBtn");
+
+        // Pause and play the video, and change the button text
+        function myFunction() {
+            if (video.paused) {
+                video.play();
+                btn.innerHTML = `<i class="fa-solid fa-play"></i>`;
+            } else {
+                video.pause();
+                btn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+            }
+        }
+
+    </script>
+
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-    import { getAuth, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithPopup, signInWithRedirect, getRedirectResult, GoogleAuthProvider, TwitterAuthProvider } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    
+        import { getAuth, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithPopup, signInWithRedirect, getRedirectResult, GoogleAuthProvider, TwitterAuthProvider } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
         auth.onAuthStateChanged(user => {
-        if(user){
-            console.log('User logged in', user)
-            
-            var user1 = auth.currentUser;
-    
-            if (user1 != null){
-                 var email = user1.email; 
-                console.log(email)
-                document.getElementById("userEmailShow").innerHTML = email;
-                document.getElementById("login_logout").innerHTML = "Logout";
-                
+            if (user) {
+                console.log('User logged in', user)
+
+                var user1 = auth.currentUser;
+
+                if (user1 != null) {
+                    var email = user1.email;
+                    console.log(email)
+                    document.getElementById("userEmailShow").innerHTML = email;
+                    document.getElementById("login_logout").innerHTML = "Logout";
+
+                }
+            } else {
+                console.log('User loggod out');
+                document.getElementById("userEmailShow").innerHTML = "Hello Guess"
+                document.getElementById("login_logout").innerHTML = "Login";
             }
-        } else {
-            console.log('User loggod out');
-            document.getElementById("userEmailShow").innerHTML = "Hello Guess"    
-            document.getElementById("login_logout").innerHTML = "Login";
-        }
-    });
+        });
 
 
-    
-    var login_nav = document.getElementById('login_nav');
-    login_nav.addEventListener('click', (e) => {
-        if (document.getElementById("login_logout").textContent == "Logout")
-        {
 
-            e.preventDefault();
-            auth.signOut();
-            console.log("logged out")
-        }
-        else location.href = 'login.html';
+        var login_nav = document.getElementById('login_nav');
+        login_nav.addEventListener('click', (e) => {
+            if (document.getElementById("login_logout").textContent == "Logout") {
+
+                e.preventDefault();
+                auth.signOut();
+                console.log("logged out")
+            }
+            else location.href = 'login.html';
         })
-    
 
 
-    
-    
-    
-       </script>
+
+
+
+
+    </script>
 
 
 
@@ -180,8 +243,10 @@
 
         <nav class="header">
             <div class="login_icon">
+                <a href="index_beta.html">
 
-                <img src="/images/rent-car-low-resolution-logo-color-on-transparent-background.png" alt="">
+                    <img src="/images/rent-car-low-resolution-logo-color-on-transparent-background.png" alt="">
+                </a>
 
             </div>
 
@@ -215,30 +280,39 @@
 
     </div>
 
+
+
+
     <section class="home" id="HOME">
+
+        
+
         <div class="content">
             <h3>Express Home Delivery</h3>
-            <p>Restaurant provides with all the amenities that one requires for a shift of mood or change in environment
-                to cherish the pleasant atmosphere and enjoy different cuisines to satisfy your hunger. </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est explicabo velit quidem maxime, quibusdam
+                repellat ipsum corporis quisquam pariatur totam delectus asperiores odio alias inventore ullam. Est sit
+                nostrum nobis. </p>
 
             <a href="#AllProducts" class="btn">Rent a CAR</a>
+        </div>
+        <div class="homevideo">
+
+            <!-- The video -->
+            <video autoplay muted loop id="myVideo">
+                <source src="/images/videos/backvideo.mp4" type="video/mp4">
+            </video>
+
+            <!-- Optional: some overlay text to describe the video -->
+            <div class="contentss">
+
+                <button id="myBtn" onclick="myFunction()"><i class="fa-solid fa-play"></i></button>
+            </div>
+
+        </div>
 
     </section>
 
-    <!--
-    
-    <div id="slider">
-        <div class="slide active">
-            <img src="images/slider-main-slider-04.jpg" alt="Slide 1">
-        </div>
-        <div class="slide">
-            <img src="images/slider-main-slider-04.jpg" alt="Slide 1">
-        </div>
-        <div class="slide">
-            <img src="images/slider-red-ferrari-super-luxury-car-wallpaper-3840x2160_54.jpg" alt="Slide 3">
-        </div>
-    </div>
--->
+
 
 
     <div class="slider">
@@ -471,8 +545,8 @@
 
 
     </script>
-   
- 
+
+
 </body>
 
 </html>

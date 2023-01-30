@@ -301,14 +301,6 @@ google_login.addEventListener("click", function () {
 
 
 
-twitter_login.addEventListener("click", function () {
-
-  signInWithRedirect(auth, providerTwitter)
-
-
-
-});
-
 
 
 
