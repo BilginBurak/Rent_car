@@ -24,7 +24,7 @@ var database = getDatabase(app);
              // ...
              rowNum += 1;
 
-             var silseneoc = "<input data-key='" + childKey + "'  class='btn btn-danger btn-block silseneoc' value='Delete' id='btnDelete' type='button'></input>";
+             var kullanicisil = "<input data-key='" + childKey + "'  class='btn btn-danger btn-block kullanicisil' value='Delete' id='btnDelete' type='button'></input>";
              //var removeBtn_elem = "<td><button data-key='" + item.key + "' class='btn btn-danger btn-block removeBtn'>Sil</button></td>";
              var rankSelector = "<select style='width: 90px; text-align: center;' data-keyuser='" + childKey + "' data-userdata='" + childData.rank + "' id='rankSelector" + rowNum + "' class='btn btn-danger btn-block rankSelector' > <option value='1' >USER</option> <option value='0'>ADMIN</option>   </select>"
 
@@ -34,12 +34,12 @@ var database = getDatabase(app);
              var row =
                  "<tr><td>" + rowNum +
                  "</td><td>" + childData.username +
+                 "</td><td>" + childData.full_name +
                  "</td><td>" + childData.email +
                  "</td><td>" + childData.last_login +
-                 "</td><td>" + childData.rank +
-                 "</td><td>" + childData.full_name +
+                 "</td><td>" + childData.carCount +
                  "</td><td>" + rankSelector +
-                 "</td><td>" + silseneoc +
+                 "</td><td>" + kullanicisil +
                  "</td></tr>"
 
              $(row).appendTo('#dataTblUser');
@@ -78,7 +78,7 @@ var database = getDatabase(app);
 
 
 
- $("body").on("click", ".silseneoc", function () {
+ $("body").on("click", ".kullanicisil", function () {
      var $keyi = $(this).data("key");
      //alert("Are you sure you want to delete the tool?");
 

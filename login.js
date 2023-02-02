@@ -113,6 +113,7 @@ createacctbtn.addEventListener("click", function () {
           password: signupPassword,
           username: username,
           last_login: Date(),
+          carCount: "0",
           rank: rank
         }
         console.log(user.uid + " --- " + auth.currentUser.uid)
@@ -274,6 +275,7 @@ google_login.addEventListener("click", function () {
         rank: "1",
         full_name:user.displayName,
         email:user.email,
+        carCount: "0",
         username: user.uid
       });
       onValue(ref(database, '/users/' + user.uid), (snapshot) => {

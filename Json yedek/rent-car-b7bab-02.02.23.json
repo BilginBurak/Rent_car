@@ -1,0 +1,469 @@
+{
+  "Cars": [
+    null,
+    null,
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A2--AUDI%20A3_img%231?alt=media&token=9451bd48-5a42-4aa2-93bf-8952c42de09e"
+      ],
+      "ID_car": "2",
+      "capacity": "5",
+      "carname": "AUDI A3",
+      "category": "Prestige",
+      "fuelType": "Diesel",
+      "gearType": "Automatic",
+      "licenseType": "B",
+      "price": "200",
+      "year": "2016"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A3--FIAT%20Doblo_img%231?alt=media&token=69611c19-468c-4046-be41-72fa87592e76"
+      ],
+      "ID_car": "3",
+      "capacity": "5",
+      "carname": "FIAT Doblo",
+      "category": "Comfort",
+      "fuelType": "Oil",
+      "gearType": "Manual",
+      "licenseType": "B",
+      "price": "150",
+      "year": "2013"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A17--HYUNDAI%20i20_img%231?alt=media&token=7c84427a-5443-48d2-a51c-b9ef0565e95c"
+      ],
+      "ID_car": 4,
+      "capacity": "5",
+      "carname": "HYUNDAI i20",
+      "category": "Economy",
+      "fuelType": "Diesel",
+      "gearType": "Manual",
+      "licenseType": "B",
+      "price": "140",
+      "year": "2015"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A5--HYUNDAI%20Bayon_img%231?alt=media&token=d9c20557-3c1b-416d-a31c-92b70d337d39"
+      ],
+      "ID_car": 5,
+      "capacity": "5",
+      "carname": "HYUNDAI Bayon",
+      "category": "Comfort",
+      "fuelType": "Diesel",
+      "gearType": "Automatic",
+      "licenseType": "B",
+      "price": "180",
+      "year": "2022"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A6--OPEL%20Corsa_img%231?alt=media&token=17e1b6c8-ae39-4cc4-a273-a0054bcdef94"
+      ],
+      "ID_car": 6,
+      "capacity": "5",
+      "carname": "OPEL Corsa",
+      "category": "Economy",
+      "fuelType": "LPG",
+      "gearType": "Manual",
+      "licenseType": "B",
+      "price": "145",
+      "year": "2017"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A7--RENAULT%20Talisman_img%231?alt=media&token=773c4a2c-4465-4ed8-9ae2-adb7e1f56f52"
+      ],
+      "ID_car": 7,
+      "capacity": "5",
+      "carname": "RENAULT Talisman",
+      "category": "Economy",
+      "fuelType": "Diesel",
+      "gearType": "Manual",
+      "licenseType": "B",
+      "price": "180",
+      "year": "2019"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A8--VOLKSWAGEN%20Caravelle_img%231?alt=media&token=05d85eef-25c8-4795-826f-60f3fc630bf0"
+      ],
+      "ID_car": 8,
+      "capacity": "9",
+      "carname": "VOLKSWAGEN Caravelle",
+      "category": "Van",
+      "fuelType": "Diesel",
+      "gearType": "Manual",
+      "licenseType": "B",
+      "price": "180",
+      "year": "2014"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A9--PEOUGEOT%20Expert%20Traveller_img%231?alt=media&token=631bb79b-c774-4434-bdf7-167b24f9d36b"
+      ],
+      "ID_car": 9,
+      "capacity": "9",
+      "carname": "PEOUGEOT Traveller",
+      "category": "Van",
+      "fuelType": "Oil",
+      "gearType": "Automatic",
+      "licenseType": "B",
+      "price": "190",
+      "year": "2016"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A10--MERCEDES%20C200_img%231?alt=media&token=558186d2-b0b8-41d6-98ac-a0d2c05d6d9a"
+      ],
+      "ID_car": 10,
+      "capacity": "5",
+      "carname": "MERCEDES C200",
+      "category": "Luxury",
+      "fuelType": "Diesel",
+      "gearType": "Automatic",
+      "licenseType": "B",
+      "price": "260",
+      "year": "2020"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A11--CITROEN%20C3_img%231?alt=media&token=82fd9529-76c1-4afa-a2bb-bfa7a54fbdb6"
+      ],
+      "ID_car": 11,
+      "capacity": "5",
+      "carname": "CITROEN C3",
+      "category": "Comfort",
+      "fuelType": "Oil",
+      "gearType": "Manual",
+      "licenseType": "B",
+      "price": "170",
+      "year": "2021"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A12--SEAT%20Arona_img%231?alt=media&token=e3e665f6-159c-46b8-8cf9-6e9334012a00"
+      ],
+      "ID_car": 12,
+      "capacity": "5",
+      "carname": "SEAT Arona",
+      "category": "Economy",
+      "fuelType": "Oil",
+      "gearType": "Manual",
+      "licenseType": "B",
+      "price": "150",
+      "year": "2021"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A13--%C5%A0KODA%20SuperB_img%231?alt=media&token=8e3e0332-0e55-4779-a5ad-391568bd402b"
+      ],
+      "ID_car": 13,
+      "capacity": "5",
+      "carname": "ŠKODA SuperB",
+      "category": "Prestige",
+      "fuelType": "Diesel",
+      "gearType": "Automatic",
+      "licenseType": "B",
+      "price": "175",
+      "year": "2022"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A14--CITROEN%20Jumpy_img%231?alt=media&token=3e9e173f-00a9-4bfc-89e8-41eea634f712"
+      ],
+      "ID_car": 14,
+      "capacity": "9",
+      "carname": "CITROEN Jumpy",
+      "category": "Van",
+      "fuelType": "Oil",
+      "gearType": "Manual",
+      "licenseType": "B",
+      "price": "135",
+      "year": "2010"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A15--BMW%205.20I_img%231?alt=media&token=b98cd83c-ecb9-4737-98bc-ae57b6c4d441"
+      ],
+      "ID_car": 15,
+      "capacity": "5",
+      "carname": "BMW 5.20I",
+      "category": "Prestige",
+      "fuelType": "Diesel",
+      "gearType": "Automatic",
+      "licenseType": "B",
+      "price": "220",
+      "year": "2019"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A16--FORD%20Tourneo%20Courier_img%231?alt=media&token=85cecfb6-ad7c-4c4e-a28c-0beee2714a7c"
+      ],
+      "ID_car": 16,
+      "capacity": "5",
+      "carname": "FORD Tourneo Courier",
+      "category": "Comfort",
+      "fuelType": "Oil",
+      "gearType": "Manual",
+      "licenseType": "B",
+      "price": "165",
+      "year": "2017"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A4--HYUNDAI%20Bayon_img%231?alt=media&token=094d872c-59b2-4f77-b8bc-0a8aee9479e1"
+      ],
+      "ID_car": 17,
+      "capacity": "5",
+      "carname": "HYUNDAI Bayon",
+      "category": "Comfort",
+      "fuelType": "Oil",
+      "gearType": "Automatic",
+      "licenseType": "B",
+      "price": "175",
+      "year": "2022"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A18--PEOUGEOT%20301_img%231?alt=media&token=5384524e-a2f9-479a-98a1-fb0ecbc1ad15"
+      ],
+      "ID_car": 18,
+      "capacity": "5",
+      "carname": "PEOUGEOT 301",
+      "category": "Economy",
+      "fuelType": "Oil",
+      "gearType": "Automatic",
+      "licenseType": "B",
+      "price": "170",
+      "year": "2019"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A19--DACIA%20Duster_img%231?alt=media&token=6635cd42-3aa4-4a64-b4ae-d7f3a8d17f2c"
+      ],
+      "ID_car": 19,
+      "capacity": "5",
+      "carname": "DACIA Duster",
+      "category": "Comfort",
+      "fuelType": "Diesel",
+      "gearType": "Manual",
+      "licenseType": "B",
+      "price": "180",
+      "year": "2020"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A20--BMW%201.16i_img%231?alt=media&token=b31a0435-c2ba-405a-ba92-e5694fd1950f"
+      ],
+      "ID_car": 20,
+      "capacity": "5",
+      "carname": "BMW 1.16i",
+      "category": "Prestige",
+      "fuelType": "Diesel",
+      "gearType": "Automatic",
+      "licenseType": "B",
+      "price": "175",
+      "year": "2020"
+    },
+    {
+      "CarsLinks": [
+        "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A21--DS%20Automobiles%20DS%209_img%231?alt=media&token=4780845f-b8d4-4f46-936c-ff753ad40254"
+      ],
+      "ID_car": 21,
+      "capacity": "5",
+      "carname": "DS Automobiles DS 9",
+      "category": "Luxury",
+      "fuelType": "Oil",
+      "gearType": "Automatic",
+      "licenseType": "B",
+      "price": "300",
+      "year": "2022"
+    }
+  ],
+  "Counters": {
+    "carIdCounter": 21,
+    "rentIdCounter": 1
+  },
+  "TheCars": [
+    {
+      "description": "koltuk ısıtmalı içi krem deri döşemeli otomatik ",
+      "id": 1,
+      "imgSource": "/10.png",
+      "name": "audi",
+      "price": 19.25,
+      "reviewCount": 1938,
+      "starRate": 5,
+      "stock": 1881,
+      "type": "sedan"
+    },
+    {
+      "description": "siyah deri döşemeli otomatik masaj özellikli",
+      "id": 2,
+      "imgSource": "./assets/images/books/mercedes.jpg",
+      "name": "mercedes",
+      "price": 11.7,
+      "reviewCount": 330,
+      "starRate": 4,
+      "stock": 7,
+      "type": "sedan"
+    },
+    {
+      "description": "içi siyah yarı deri döşemeli geri görüş sensörlü 1.4 motor",
+      "id": 3,
+      "imgSource": "./assets/images/books/opel.jpg",
+      "name": "opel",
+      "price": 44.9,
+      "reviewCount": 130,
+      "starRate": 4.2,
+      "stock": 3,
+      "type": "hatcback"
+    },
+    {
+      "description": "içi siyah yarı deri döşemeli geri görüş sensörlü enjoy paket",
+      "id": 4,
+      "imgSource": "./assets/images/books/opelastra.jpg",
+      "name": "opel astra",
+      "price": 40.89,
+      "reviewCount": 560,
+      "starRate": 4.2,
+      "stock": 6,
+      "type": "sedan"
+    },
+    {
+      "description": "Hibrit bir araç şehir içi için ideal içi krem full deri döşeme",
+      "id": 5,
+      "imgSource": "./assets/images/books/bmwhibrit.jpg",
+      "name": "bmw",
+      "oldPrice": 14.5,
+      "price": 9.99,
+      "reviewCount": 410,
+      "starRate": 3.7,
+      "stock": 450,
+      "type": "hatcback"
+    },
+    {
+      "description": "otomatik içi krem deri döşemeli park sensörlü",
+      "id": 6,
+      "imgSource": "./assets/images/books/nissan.jpg",
+      "name": "nissan",
+      "price": 22.99,
+      "reviewCount": 145,
+      "starRate": 4.3,
+      "stock": 321,
+      "type": "hatcback"
+    },
+    {
+      "description": " krem deri döşeme tavanda ledli aydınlatma ultra lüks 4x4",
+      "id": 7,
+      "imgSource": "./assets/images/books/mercedesjip.jpg",
+      "name": "mercedes",
+      "price": 13.29,
+      "reviewCount": 173,
+      "starRate": 4.3,
+      "stock": 73,
+      "type": "jip"
+    },
+    {
+      "description": "golf kasa enjoy paket otomatik vites",
+      "id": 8,
+      "imgSource": "./assets/images/books/gol",
+      "name": "volkswogen",
+      "price": 16.99,
+      "reviewCount": 189,
+      "starRate": 4.3,
+      "stock": 89,
+      "type": "hatcback"
+    },
+    {
+      "description": "passat kasa enjoy paket otomatik vites ",
+      "id": 9,
+      "imgSource": "./assets/images/books/passat.jpg",
+      "name": "volkswogen",
+      "oldPrice": 34.5,
+      "price": 19.99,
+      "reviewCount": 78,
+      "starRate": 4.3,
+      "stock": 80,
+      "type": "sedan"
+    },
+    {
+      "description": "ultra lüx 4x4 içi kahverengi deri döşemeli",
+      "id": 10,
+      "imgSource": "./assets/images/books/volvojip.jpg",
+      "name": "volvo",
+      "oldPrice": 47.49,
+      "price": 34.99,
+      "reviewCount": 250,
+      "starRate": 4.5,
+      "stock": 14,
+      "type": "jip"
+    },
+    {
+      "description": "fenaaaa yılnaaaan",
+      "id": 11,
+      "imgSource": "https://cdn.sstatic.net/Img/teams/teams-illo-free-sidebar-promo.svg?v=47faa659a05e",
+      "name": "araba3",
+      "oldPrice": 55,
+      "price": 23,
+      "reviewCount": 250,
+      "starRate": 4.5,
+      "stock": 122,
+      "type": "jip"
+    }
+  ],
+  "users": {
+    "0ZKXRfJTzpclTqMS79rZaojemOD3": {
+      "carCount": "0",
+      "email": "burak@mail.com",
+      "full_name": "Burak BİLGİN",
+      "last_login": "Mon Jan 30 2023 02:33:50 GMT+0300 (GMT+03:00)",
+      "password": "asdasd",
+      "rank": "0",
+      "username": "burak"
+    },
+    "1C19FzQcqrfdEIwGSwuOgzvtcYf2": {
+      "email": "burakbilgin2207@gmail.com",
+      "full_name": "Burak Bilgin",
+      "last_login": "Thu Feb 02 2023 04:42:40 GMT+0300 (GMT+03:00)",
+      "password": "asdasd",
+      "rank": "1",
+      "username": "1C19FzQcqrfdEIwGSwuOgzvtcYf2"
+    },
+    "4PyOYo6SHIPM1S3zdaN2N8kIshT2": {
+      "email": "ahmet01@gmail.com",
+      "full_name": "Ahmet ",
+      "last_login": "Fri Jan 27 2023 17:00:23 GMT+0300 (GMT+03:00)",
+      "password": "123456",
+      "rank": 1,
+      "username": "davaro"
+    },
+    "HA1oa58N7Whbl4BbmCOKniJFyVj2": {
+      "email": "asdasd@mail.com",
+      "full_name": "asdas asdasd",
+      "last_login": "Wed Jan 11 2023 18:45:43 GMT+0300 (GMT+03:00)",
+      "password": "asdasd",
+      "rank": "0",
+      "username": "asdasd"
+    },
+    "ZpgF6nyXFRN4f2Z10XSDBIG5q9X2": {
+      "carCount": "0",
+      "email": "burakbilgin@gmail.com",
+      "full_name": "burak ",
+      "last_login": "Thu Feb 02 2023 04:42:06 GMT+0300 (GMT+03:00)",
+      "password": "asdasd",
+      "rank": 1,
+      "username": "burak33"
+    },
+    "rgGPgysmjuN1i0GO62PnqmiEf263": {
+      "carCount": "0",
+      "email": "asdza1213@gmail.com",
+      "full_name": "asdz asdz",
+      "last_login": "Thu Feb 02 2023 04:45:50 GMT+0300 (GMT+03:00)",
+      "rank": "0",
+      "username": "rgGPgysmjuN1i0GO62PnqmiEf263"
+    }
+  }
+}

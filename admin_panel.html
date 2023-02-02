@@ -19,7 +19,7 @@
             height: 100%;
             margin: 0;
             font-family: Arial;
-
+            
         }
 
         /* Style tab links */
@@ -45,30 +45,29 @@
             display: none;
             padding: 100px 20px;
             height: 100%;
-            margin-top: 50px;
-            font-size: 15px;
+            margin-top: 30px;
+            font-size: 16px;
 
         }
 
         #carList {
-            background-color: rgba(65, 32, 32, 0.432);
+            background-color: rgba(65, 32, 32, 0.4);
         }
 
         #addCar {
-            background-color: green;
+            background-color: rgba(0, 128, 0, 0.4);
         }
 
         #updateCar {
-            background-color: blue;
+            background-color: rgba(6, 6, 170, 0.5);
         }
 
         #UsersTab {
-            background-color: rgba(255, 166, 0, 0.329);
+            background-color: rgba(204, 166, 94, 0.4);
         }
 
 
-        .carTableContainer
-        {
+        .carTableContainer {
             font-size: 16px;
         }
     </style>
@@ -113,10 +112,10 @@
 
     <!-- Tab links -->
     <div class="tab">
-        <button class="tablink" onclick="openPage('carList', this, 'red')" >Car List</button>
+        <button class="tablink" onclick="openPage('carList', this, 'red')">Car List</button>
         <button class="tablink" onclick="openPage('addCar', this, 'green')" >ADD CAR</button>
-        <button class="tablink" onclick="openPage('updateCar', this, 'blue')">Update Cars</button>
-        <button class="tablink" onclick="openPage('UsersTab', this, 'orange')" id="defaultOpen">Users</button>
+        <button class="tablink" onclick="openPage('updateCar', this, 'blue')" id="defaultOpen">Update Cars</button>
+        <button class="tablink" onclick="openPage('UsersTab', this, 'orange')">Users</button>
 
 
 
@@ -155,18 +154,35 @@
 
         <!-- ------------this tab to add cars----------------- -->
         <div id="addCar" class="tabcontent">
-            <div class="SignUpForm" id="mainform">
 
-                <div class="SignUpFormz" id="form">
-                    <div class="input_values">
 
-                        <input type="text" placeholder="Car Name" class="txt" id="carname" name="carname">
-                        <input type="text" placeholder="Year" class="txt" id="year" name="year">
-                        <input type="text" placeholder="Price" class="txt" id="price" name="price">
-                        <input type="text" placeholder="Capacity" class="txt" id="capacity" name="capacity">
-                        <input type="text" placeholder="License Type" class="txt" id="licenseType" name="licenseType">
+            <div class="maincontainerAddUpdateCar">
 
-                        <select style="width: 30%; text-align: center;" class="txt" id="category">
+
+                <div class="input_values">
+                    <div class="addPropertiesInputs">
+
+                        <input type="text" placeholder="Car Name" class="txt" id="addCarcarname" name="carname">
+                        <input type="text" placeholder="Year" class="txt" id="addCaryear" name="year">
+                        <input type="text" placeholder="Price" class="txt" id="addCarprice" name="price">
+                        <input type="text" placeholder="Capacity" class="txt" id="addCarcapacity" name="capacity">
+
+                    </div>
+
+
+                    <div class="addPropertiesSelectors">
+
+                        <select class="txt" id="addCarlicenseType">
+                            <option value="none">Please select license type</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+
+                        </select>
+
+
+                        <select class="txt" id="addCarcategory">
                             <option value="none">Please select car category</option>
                             <option value="Economy">Economy</option>
                             <option value="Comfort">Comfort</option>
@@ -175,7 +191,7 @@
                             <option value="Van">Van/Panelvan</option>
                         </select>
 
-                        <select style="width: 30%; text-align: center;" class="txt" id="fuelType">
+                        <select class="txt" id="addCarfuelType">
                             <option value="none">Please select a fuel type</option>
                             <option value="Diesel">Diesel</option>
                             <option value="Oil">Oil</option>
@@ -183,7 +199,7 @@
                         </select>
 
 
-                        <select style="width: 30%; text-align: center;" class="txt" id="gearType">
+                        <select class="txt" id="addCargearType">
                             <option value="none">Please select gear type</option>
                             <option value="Automatic">Automatic</option>
                             <option value="Manual">Manual</option>
@@ -192,31 +208,66 @@
 
 
 
+                    </div>
+
+                </div>
+
+
+
+                <div class="addCarImgSelectorDiv">
+                    <input type="submit" id="selimgsbtn" name="selimgsbtn" value="Select Cars Images" class="btn" />
+
+                    <div id="imageDiv">
+                        <label for="" id="label"></label>
+                        <label for="" id="proglab"></label>
+                    </div>
+
+                    <div id="controldiv">
+
 
                     </div>
 
-                    <div class="input_btns">
-                        <input type="submit" id="selimgsbtn" name="selimgsbtn" value="Select Cars Images" class="btn" />
 
-                        <div id="imageDiv">
-                            <label for="" id="label"></label>
-                            <label for="" id="proglab"></label>
-                        </div>
-
-                        <div id="controldiv">
+                </div>
 
 
-                        </div>
+                
+                <div class="input_btns">
+
+                    <input type="submit" value="Clean Form" class="btn" id="addCarbtnClean" name="btnClean">
+                    <input type="submit" value="ADD" class="btn" id="addCarbtnAdd" name="btnAdd">
 
 
-                    </div>
-                    <div class="input_btns">
-
-                        <input type="submit" value="Clean Form" class="btn" id="btnClean" name="btnClean">
-                        <input type="submit" value="ADD" class="btn" id="btnAdd" name="btnAdd">
+                </div>
 
 
-                    </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--
+            <div class="SignUpForm" id="mainform">
+
+                <div class="SignUpFormz" id="form">
+                
+                    
 
 
 
@@ -225,27 +276,51 @@
                 </div>
 
             </div>
+        -->
+
+
+
+
         </div>
 
 
 
 
 
-<!-- -------------- this tab for update cars------------------>
+
+        <!-- -------------- this tab for update cars------------------>
         <div id="updateCar" class="tabcontent">
-            <div class="SignUpForm" id="mainform">
 
-                <div class="SignUpFormz" id="form">
-                    <div class="input_values">
 
-                        <input type="number" placeholder="Car ID" class="txt" id="ID_carU" name="ID_car">
-                        <input type="text" placeholder="Car Name" class="txt" id="carnameU" name="carname">
-                        <input type="text" placeholder="Year" class="txt" id="yearU" name="year">
-                        <input type="text" placeholder="Price" class="txt" id="priceU" name="price">
-                        <input type="text" placeholder="Capacity" class="txt" id="capacityU" name="capacity">
-                        <input type="text" placeholder="License Type" class="txt" id="licenseTypeU" name="licenseType">
+            <div class="maincontainerAddUpdateCar">
+                <div>
+                    <input type="text" placeholder="Car ID" class="txt" id="idCar" name="carid">
+                </div>
 
-                        <select style="width: 30%; text-align: center;" class="txt" id="categoryU">
+                <div class="input_values">
+                    <div class="addPropertiesInputs">
+
+                        <input type="text" placeholder="Car Name" class="txt" id="updateCarcarname" name="carname">
+                        <input type="text" placeholder="Year" class="txt" id="updateCaryear" name="year">
+                        <input type="text" placeholder="Price" class="txt" id="updateCarprice" name="price">
+                        <input type="text" placeholder="Capacity" class="txt" id="updateCarcapacity" name="capacity">
+
+                    </div>
+
+
+                    <div class="addPropertiesSelectors">
+
+                        <select class="txt" id="updateCarlicenseType">
+                            <option value="none">Please select license type</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+
+                        </select>
+
+
+                        <select class="txt" id="updateCarcategory">
                             <option value="none">Please select car category</option>
                             <option value="Economy">Economy</option>
                             <option value="Comfort">Comfort</option>
@@ -254,7 +329,7 @@
                             <option value="Van">Van/Panelvan</option>
                         </select>
 
-                        <select style="width: 30%; text-align: center;" class="txt" id="fuelTypeU">
+                        <select class="txt" id="updateCarfuelType">
                             <option value="none">Please select a fuel type</option>
                             <option value="Diesel">Diesel</option>
                             <option value="Oil">Oil</option>
@@ -262,7 +337,7 @@
                         </select>
 
 
-                        <select style="width: 30%; text-align: center;" class="txt" id="gearTypeU">
+                        <select class="txt" id="updateCargearType">
                             <option value="none">Please select gear type</option>
                             <option value="Automatic">Automatic</option>
                             <option value="Manual">Manual</option>
@@ -271,42 +346,54 @@
 
 
 
-                        <div id="imageDiv">
-                            <label for="" id="label"></label>
-                            <label for="" id="proglab"></label>
-                        </div>
-
-                        <div id="controldiv">
-
-
-                        </div>
                     </div>
 
-                    <div class="input_btns">
-                        <input type="submit" id="selimgsbtn" name="selimgsbtn" value="Select Cars Images" class="btn" />
+                </div>
 
 
+
+                <div class="addCarImgSelectorDiv">
+                    <input type="submit" id="selimgsbtnupdate" name="selimgsbtn" value="Select Cars Images" class="btn" />
+
+                    <div id="UpdateimageDiv">
+                        <label for="" id="label"></label>
+                        <label for="" id="proglab"></label>
                     </div>
 
-
-                    <div  class="input_btns">
-                        <input type="submit" value="Clean Form" class="btn" id="btnClean" name="btnClean">
-
-
-                        <input type="submit" id="btnGet" name="btnGet" value="get" class="btn" />
-
-
-                        <input type="submit" value="Update" class="btn" id="btnUpdate" name="btnUpdate">
-
+                    <div id="controldiv">
 
 
                     </div>
-
 
 
                 </div>
 
+
+                
+                <div class="input_btns">
+
+                    <input type="submit" value="Clean Form" class="btn" id="updateCarbtnClean" name="btnClean">
+                    <input type="submit" value="Get Car Info" class="btn" id="updateCarbtnGet" name="btnGet">
+
+                    <input type="submit" value="Update Car" class="btn" id="updateCarbtnAdd" name="btnupdate">
+
+
+                </div>
+
+
+
+
             </div>
+
+
+
+
+
+
+
+
+
+       
         </div>
 
 
@@ -315,19 +402,19 @@
 
 
         <div id="UsersTab" class="tabcontent">
-          <div class="carTableContainer mt-5">
+            <div class="carTableContainer mt-5">
                 <table class="table table-dark" id='dataTblUser' style="text-align: center;">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Car ID</th>
-                            <th scope="col">Car Name</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Fuel Type</th>
-                            <th scope="col">Model Year</th>
-                            <th scope="col">Price</th>
+                            <th scope="col">Username/ User ID</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Last Login</th>
+                            <th scope="col">Car Count</th>
+                            <th scope="col">Rank Selector</th>
 
-                            <th scope="col">Delete This Item</th>
+                            <th scope="col">Delete This User</th>
 
                         </tr>
                     </thead>
@@ -373,7 +460,7 @@
 
 
 
-       
+
 
 
         <script src="/firebase.js"></script>

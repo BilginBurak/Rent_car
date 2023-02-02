@@ -16,9 +16,9 @@ const firebaseConfig = {
     messagingSenderId: "307208189325",
     appId: "1:307208189325:web:49734a018255314d7039c4",
     measurementId: "G-5HKTNKYZ9R"
-  };
+};
 
-  
+
 var firebaseCarId;
 
 
@@ -36,6 +36,8 @@ var ImageLinksArray = [];
 
 const imgDiv = document.getElementById("imageDiv");
 const selBtn = document.getElementById("selimgsbtn");
+const selBtnUpdate = document.getElementById("selimgsbtnupdate");
+
 const btnAdd = document.getElementById("btnAdd");
 
 const proglab = document.getElementById("proglab");
@@ -53,6 +55,36 @@ function assingImgsToFilesArray(thefiles) {
 }
 
 
+selBtnUpdate.addEventListener('click', (e) => {
+
+    let inp = document.createElement('input');
+    inp.type = 'file';
+    inp.multiple = 'multiple';
+    inp.id = 'imgmultiselector'
+    inp.click();
+    inp.onchange = (e) => {
+
+        assingImgsToFilesArray(e.target.files);
+        UpdateimageDiv.innerHTML = '';
+        UpdateimageDiv.classList.add('imagesDivStyle');
+        for (let i = 0; i < Files.length; i++) {
+            FileReaders[i] = new FileReader();
+
+            FileReaders[i].onload = function () {
+                var img = document.createElement('img');
+                img.id = 'imgNo' + i;
+                img.classList.add('imgs');
+                img.src = FileReaders[i].result;
+                UpdateimageDiv.append(img);
+            }
+
+            FileReaders[i].readAsDataURL(Files[i]);
+        }
+
+
+    }
+
+});
 selBtn.addEventListener('click', (e) => {
 
     let inp = document.createElement('input');
@@ -88,17 +120,17 @@ selBtn.addEventListener('click', (e) => {
 
 
 
-btnAdd.addEventListener('click', (e) => {
-    var ID_car = document.getElementById('ID_car').value;
-    var carname = document.getElementById('carname').value;
-    var year = document.getElementById('year').value;
-    var price = document.getElementById('price').value;
-    var category = document.getElementById('category').value;
-    var fuelType = document.getElementById('fuelType').value;
+addCarbtnAdd.addEventListener('click', (e) => {
+    //var ID_car = document.getElementById('ID_car').value;
+    var carname = document.getElementById('addCarcarname').value;
+    var year = document.getElementById('addCaryear').value;
+    var price = document.getElementById('addCarprice').value;
+    var category = document.getElementById('addCarcategory').value;
+    var fuelType = document.getElementById('addCarfuelType').value;
 
-    var licenseType = document.getElementById('licenseType').value;
-    var capacity = document.getElementById('capacity').value;
-    var gearType = document.getElementById('gearType').value;
+    var licenseType = document.getElementById('addCarlicenseType').value;
+    var capacity = document.getElementById('addCarcapacity').value;
+    var gearType = document.getElementById('addCargearType').value;
 
 
     const dbRef = ref(database);
@@ -259,32 +291,46 @@ btnAdd.addEventListener('click', (e) => {
 
 
 // get data
-btnGet.addEventListener('click', (e) => {
+updateCarbtnGet.addEventListener('click', (e) => {
 
-    var ID_carU = document.getElementById('ID_carU').value;
+    var ID_car = document.getElementById('idCar').value;
 
-    const starCountRef = ref(database, 'Cars/' + ID_carU);
+    if (document.getElementById('updateCarcarname').value == "" && document.getElementById('idCar').value == "") alert("id giriniz");
+
+
+
+    const starCountRef = ref(database, 'Cars/' + ID_car);
     onValue(starCountRef, (snapshot) => {
         var data = snapshot.val(); // data = all data on firebse     
 
 
-        document.getElementById('ID_carU').value = ID_carU;
-        document.getElementById('yearU').value = data.year;
-        document.getElementById('carnameU').value = data.carname;
-        document.getElementById('priceU').value = data.price;
-        document.getElementById('categoryU').value = data.category;
-        document.getElementById('fuelTypeU').value = data.fuelType;
+        //document.getElementById('ID_carU').value = ID_carU;
+        document.getElementById('updateCaryear').value = data.year;
+        document.getElementById('updateCarcarname').value = data.carname;
+        document.getElementById('updateCarprice').value = data.price;
+        document.getElementById('updateCarcategory').value = data.category;
+        document.getElementById('updateCarfuelType').value = data.fuelType;
 
 
-        document.getElementById('licenseTypeU').value = data.licenseType;
-        document.getElementById('capacityU').value = data.capacity;
-        document.getElementById('gearTypeU').value = data.gearType;
+        document.getElementById('updateCarlicenseType').value = data.licenseType;
+        document.getElementById('updateCarcapacity').value = data.capacity;
+        document.getElementById('updateCargearType').value = data.gearType;
 
-        alert("Verilriniz getirildi");
+
+        UpdateimageDiv.innerHTML = '';
+        UpdateimageDiv.classList.add('imagesDivStyle');
+        var img = document.createElement('img');
+        img.classList.add('imgs');
+        img.src = data.CarsLinks;
+        UpdateimageDiv.append(img);
+
+
+
 
     });
 
-    if (document.getElementById('carname').value == "" && document.getElementById('ID_car').value == "") alert("id giriniz");
+    alert("Car' data fetched");
+
 
 
 
@@ -302,18 +348,18 @@ btnGet.addEventListener('click', (e) => {
 
 
 
-// update data
-btnUpdate.addEventListener('click', (e) => {
-    var ID_car = document.getElementById('ID_car').value;
-    var carname = document.getElementById('carname').value;
-    var year = document.getElementById('year').value;
-    var price = document.getElementById('price').value;
-    var category = document.getElementById('category').value;
-    var fuelType = document.getElementById('fuelType').value;
+// update  car's data
+updateCarbtnAdd.addEventListener('click', (e) => {
+    var ID_car = document.getElementById("idCar").value;
+    var carname = document.getElementById('updateCarcarname').value;
+    var year = document.getElementById('updateCaryear').value;
+    var price = document.getElementById('updateCarprice').value;
+    var category = document.getElementById('updateCarcategory').value;
+    var fuelType = document.getElementById('updateCarfuelType').value;
 
-    var licenseType = document.getElementById('licenseType').value;
-    var capacity = document.getElementById('capacity').value;
-    var gearType = document.getElementById('gearType').value;
+    var licenseType = document.getElementById('updateCarlicenseType').value;
+    var capacity = document.getElementById('updateCarcapacity').value;
+    var gearType = document.getElementById('updateCargearType').value;
 
 
     update(ref(database, 'Cars/' + ID_car), {
@@ -329,7 +375,7 @@ btnUpdate.addEventListener('click', (e) => {
 
 
     })
-    alert('updated');
+    alert('Car updated');
 });
 
 /// remove data
@@ -367,25 +413,25 @@ btnClean.addEventListener('click', (e)=>{
 */
 
 
-var btnClear= document.getElementById('btnClean');
-btnClear.onclick = cleanitems;
-function cleanitems(){
-    document.getElementById('ID_car').value = "";
-    document.getElementById('carname').value = "";
-    document.getElementById('year').value = "";
-    document.getElementById('price').value = "";
-    document.getElementById('category').value = "none";
-    document.getElementById('fuelType').value = "none";
+var addCarbtnClear = document.getElementById('addCarbtnClean');
+addCarbtnClear.onclick = cleanitems;
+function cleanitems() {
+    //document.getElementById('addCarID_car').value = "";
+    document.getElementById('addCarcarname').value = "";
+    document.getElementById('addCaryear').value = "";
+    document.getElementById('addCarprice').value = "";
+    document.getElementById('addCarcategory').value = "none";
+    document.getElementById('addCarfuelType').value = "none";
 
-    document.getElementById('licenseType').value = "";
-    document.getElementById('capacity').value = "";
-    document.getElementById('gearType').value = "none";
+    document.getElementById('addCarlicenseType').value = "none";
+    document.getElementById('addCarcapacity').value = "";
+    document.getElementById('addCargearType').value = "none";
 
     ImageLinksArray = [];
-    imgDiv.innerHTML ="";
+    imgDiv.innerHTML = "";
     imgDiv.classList.remove('imagesDivStyle');
 
-    
+
 }
 
 

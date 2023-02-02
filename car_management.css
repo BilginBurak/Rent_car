@@ -1,10 +1,166 @@
+.maincontainerAddUpdateCar{
+    
+    width: 100%; height: auto;
+    margin-top:50px ;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+     
+
+}
+
+
+#addCar{
+    padding: auto;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.input_values{
+    display: flex;
+    width: 1000px;
+    align-items:stretch;
+    justify-content: center;
+    height: 300px;
+}
+
+.addPropertiesInputs{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
+    
+}
+.addPropertiesSelectors{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+select, option{
+    width: 400px;
+    font-size: 16px;
+    border-radius: 10px;
+    height: 40px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.input_values input, #idCar{
+    width: 400px;
+    font-size: 16px;
+    border-radius: 10px;
+    height: 40px;
+    margin-right: 20px;
+    padding-left: 20px;
+}
+
+
+
+
+
+
+
+.addCarImgSelectorDiv{
+
+    width: 900px;
+    margin-top: 20px;
+height: 100px;
+    display: flex;
+align-items: center;
+}
+
+.input_btns input{
+    background-color: aliceblue;
+    width: 200px;
+    height: 50px;
+border-radius:10px ;
+margin: 30px;
+font-size: 16px;
+}
+
+
+.addCarImgSelectorDiv input{
+    font-size: 16px;
+    text-align: center;
+
+    background-color: greenyellow;
+    width: 150px;
+    height: 40px;
+border-radius:10px ;
+margin: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.imgs {
+    height: 80px;
+    width: 120px;
+    border: 1px black;
+    margin-left: -10%;
+    margin-right: 10%;
+    transition: .4s;
+
+}
+
+.imagesDivStyle{
+    width: 100%;
+    padding: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px gray;
+    padding: 5px;
+}
+.imageDiv{
+    
+}
+
+.imgs:hover{
+    scale: 200%;
+    background-color: white;
+  
+    transform: translateY(-25px);
+    transition: .5s ;
+}
+
+
+/*
 .SignUpForm {
     width: 80%;
     height: auto;
     padding: 30px;
     text-align: center;
-    /*background: url(./signUpBackGround.jpg);   */
+    background: url(./signUpBackGround.jpg);  
     position: absolute;
     top: 50%;
     left: 50%;
@@ -120,3 +276,7 @@
 .imageDiv{
     
 }
+
+
+
+*/
