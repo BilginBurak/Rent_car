@@ -189,6 +189,7 @@ addCarbtnAdd.addEventListener('click', (e) => {
             fuelType: fuelType,
             licenseType: licenseType,
             capacity: capacity,
+            active:false,
             gearType: gearType
 
         });

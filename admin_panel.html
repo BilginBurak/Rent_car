@@ -112,9 +112,9 @@
 
     <!-- Tab links -->
     <div class="tab">
-        <button class="tablink" onclick="openPage('carList', this, 'red')">Car List</button>
+        <button class="tablink" onclick="openPage('carList', this, 'red')" id="defaultOpen">Car List</button>
         <button class="tablink" onclick="openPage('addCar', this, 'green')" >ADD CAR</button>
-        <button class="tablink" onclick="openPage('updateCar', this, 'blue')" id="defaultOpen">Update Cars</button>
+        <button class="tablink" onclick="openPage('updateCar', this, 'blue')" >Update Cars</button>
         <button class="tablink" onclick="openPage('UsersTab', this, 'orange')">Users</button>
 
 
@@ -134,6 +134,7 @@
                             <th scope="col">Fuel Type</th>
                             <th scope="col">Model Year</th>
                             <th scope="col">Price</th>
+                            <th scope="col">Car Status</th>
 
                             <th scope="col">Delete This Item</th>
 

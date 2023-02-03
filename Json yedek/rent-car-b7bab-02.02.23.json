@@ -14,6 +14,7 @@
       "gearType": "Automatic",
       "licenseType": "B",
       "price": "200",
+      "active": true,
       "year": "2016"
     },
     {
@@ -28,6 +29,7 @@
       "gearType": "Manual",
       "licenseType": "B",
       "price": "150",
+      "active": true,
       "year": "2013"
     },
     {
@@ -41,6 +43,7 @@
       "fuelType": "Diesel",
       "gearType": "Manual",
       "licenseType": "B",
+      "active": true,
       "price": "140",
       "year": "2015"
     },
@@ -49,6 +52,7 @@
         "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A5--HYUNDAI%20Bayon_img%231?alt=media&token=d9c20557-3c1b-416d-a31c-92b70d337d39"
       ],
       "ID_car": 5,
+      "active": true,
       "capacity": "5",
       "carname": "HYUNDAI Bayon",
       "category": "Comfort",
@@ -67,6 +71,7 @@
       "carname": "OPEL Corsa",
       "category": "Economy",
       "fuelType": "LPG",
+      "active": true,
       "gearType": "Manual",
       "licenseType": "B",
       "price": "145",
@@ -78,6 +83,7 @@
       ],
       "ID_car": 7,
       "capacity": "5",
+      "active": true,
       "carname": "RENAULT Talisman",
       "category": "Economy",
       "fuelType": "Diesel",
@@ -92,6 +98,7 @@
       ],
       "ID_car": 8,
       "capacity": "9",
+      "active": true,
       "carname": "VOLKSWAGEN Caravelle",
       "category": "Van",
       "fuelType": "Diesel",
@@ -112,6 +119,7 @@
       "gearType": "Automatic",
       "licenseType": "B",
       "price": "190",
+      "active": true,
       "year": "2016"
     },
     {
@@ -126,6 +134,7 @@
       "gearType": "Automatic",
       "licenseType": "B",
       "price": "260",
+      "active": true,
       "year": "2020"
     },
     {
@@ -140,6 +149,7 @@
       "gearType": "Manual",
       "licenseType": "B",
       "price": "170",
+      "active": true,
       "year": "2021"
     },
     {
@@ -147,6 +157,7 @@
         "https://firebasestorage.googleapis.com/v0/b/rent-car-b7bab.appspot.com/o/CarsImages%2FCarId%3A12--SEAT%20Arona_img%231?alt=media&token=e3e665f6-159c-46b8-8cf9-6e9334012a00"
       ],
       "ID_car": 12,
+      "active": true,
       "capacity": "5",
       "carname": "SEAT Arona",
       "category": "Economy",
@@ -162,6 +173,7 @@
       ],
       "ID_car": 13,
       "capacity": "5",
+      "active": true,
       "carname": "ŠKODA SuperB",
       "category": "Prestige",
       "fuelType": "Diesel",
@@ -182,6 +194,7 @@
       "gearType": "Manual",
       "licenseType": "B",
       "price": "135",
+      "active": true,
       "year": "2010"
     },
     {
@@ -196,6 +209,7 @@
       "gearType": "Automatic",
       "licenseType": "B",
       "price": "220",
+      "active": true,
       "year": "2019"
     },
     {
@@ -210,6 +224,7 @@
       "gearType": "Manual",
       "licenseType": "B",
       "price": "165",
+      "active": true,
       "year": "2017"
     },
     {
@@ -224,6 +239,7 @@
       "gearType": "Automatic",
       "licenseType": "B",
       "price": "175",
+      "active": true,
       "year": "2022"
     },
     {
@@ -238,6 +254,7 @@
       "gearType": "Automatic",
       "licenseType": "B",
       "price": "170",
+      "active": true,
       "year": "2019"
     },
     {
@@ -252,6 +269,7 @@
       "gearType": "Manual",
       "licenseType": "B",
       "price": "180",
+      "active": true,
       "year": "2020"
     },
     {
@@ -266,6 +284,7 @@
       "gearType": "Automatic",
       "licenseType": "B",
       "price": "175",
+      "active": true,
       "year": "2020"
     },
     {
@@ -280,6 +299,7 @@
       "gearType": "Automatic",
       "licenseType": "B",
       "price": "300",
+      "active": true,
       "year": "2022"
     }
   ],

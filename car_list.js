@@ -16,7 +16,7 @@ window.onload = resfreshtable();
 
 function resfreshtable() {
     $('#dataTbl td').remove();
-    var rowNum = 0;
+    var rowNum2 = 0;
     const dbRef = ref(database, 'Cars/');
 
     onValue(dbRef, (snapshot) => {
@@ -24,25 +24,27 @@ function resfreshtable() {
             var childKey = childSnapshot.key;
             const childData = childSnapshot.val();
             // ...
-            rowNum += 1;
+            rowNum2 += 1;
 
-            var removebtn = "<input data-keyc='" + childSnapshot.key + "'  class='btn btn-danger btn-block removeBtn' value='detete' id='btnDelete' type='button'></input>";
+            var removebtn = "<input style='text-align: center; font-size:12px' data-keyc='" + childSnapshot.key + "'  class='btn btn-danger btn-block removeBtn' value='detete' id='btnDelete' type='button'></input>";
             //var removeBtn_elem = "<td><button data-key='" + item.key + "' class='btn btn-danger btn-block removeBtn'>Sil</button></td>";
-
+            var activationselect = "<select style='width: 100px; text-align: center; font-size:12px' data-carsidsi='" + childKey + "' data-activation='" + childData.active + "' id='activationselect" + rowNum2 + "' class='btn btn-danger btn-block activationselect' > <option value='true' >Active</option> <option value='false'>Not Active</option>   </select>"
 
 
             var row =
-                "<tr><td>" + rowNum +
+                "<tr><td>" + rowNum2 +
                 "</td><td>" + childData.ID_car +
                 "</td><td>" + childData.carname +
                 "</td><td>" + childData.category +
                 "</td><td>" + childData.fuelType +
                 "</td><td>" + childData.year +
                 "</td><td>" + childData.price +
+                "</td><td>" + activationselect +
                 "</td><td>" + removebtn +
                 "</td></tr>"
 
-            $(row).appendTo('#dataTbl');
+                $(row).appendTo('#dataTbl');
+                document.getElementById('activationselect' + rowNum2).value = childData.active;
 
         });
     }, {
@@ -51,6 +53,26 @@ function resfreshtable() {
 
 
 };
+
+
+
+$("body").on("input", ".activationselect", function () {
+    var $carsID = $(this).data("carsidsi");
+
+    var $activation = $(this).data("activation");
+
+    if ($activation == false)
+        update(ref(database, 'Cars/' + $carsID + '/'), { active: true });
+    if ($activation == true)
+        update(ref(database, 'Cars/' + $carsID + '/'), { active: false });
+
+
+
+    console.log('CAR Changed: ' + $carsID);
+    //
+    resfreshtable();
+});
+
 
 
 
