@@ -1,45 +1,4 @@
-
-
-/*
-function hidelog() {
-    var log_form= document.querySelector('.log_form');
-  log_form.style.display = 'none';
-
-  var reg_form= document.querySelector('.reg_form');
-  reg_form.style.display = 'block';
-
-
-  }
-
-  function hidereg() {
-    var log_form= document.querySelector('.log_form');
-  log_form.style.display = 'block';
-
-  var reg_form= document.querySelector('.reg_form');
-  reg_form.style.display = 'none';
-
-
-  }
-
-  var buttonreg = document.querySelector('#hide-button');
-  buttonreg.addEventListener('click', hidereg);
-  var buttonlog = document.querySelector('#hide-button');
-button.addEventListener('click', hidelog);
-*/
-/*
-// Your web app's Firebase configuration
-var firebaseConfig = {
-  apiKey: "AIzaSyD8huoUJahSSgfeVrduetfga8VcAn3ohUA",
-  authDomain: "rent-car-b7bab.firebaseapp.com",
-  projectId: "rent-car-b7bab",
-  storageBucket: "rent-car-b7bab.appspot.com",
-  messagingSenderId: "307208189325",
-  appId: "1:307208189325:web:49734a018255314d7039c4"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);*/
-
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+//import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithPopup, signInWithRedirect, getRedirectResult, GoogleAuthProvider, TwitterAuthProvider } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 import { getDatabase, ref, set, onValue, update, remove, child, get } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
@@ -176,7 +135,7 @@ submitButton.addEventListener("click", function () {
         console.log(rank1)
         window.localStorage.setItem("userid",user.uid);
         if (rank1 == 1)
-          location.href = "index_beta.html";
+          location.href = "index.html";
         if (rank1 == 0)
           location.href = "admin_panel.html"
         // ...
@@ -282,7 +241,7 @@ google_login.addEventListener("click", function () {
         var rank1 = snapshot.val().rank;
         console.log(rank1)
         if (rank1 == 1)
-          location.href = "index_beta.html";
+          location.href = "index.html";
         if (rank1 == 0)
           location.href = "admin_panel.html"
         // ...
