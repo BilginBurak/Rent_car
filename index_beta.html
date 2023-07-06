@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+
+
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -27,33 +29,28 @@
     <style>
         #AllProducts .false {
             position: relative;
-            background-color: rgba(219, 156, 156, 0.5);
+            background-color: #ff7f7f4d;
             opacity: 0.9;
         }
 
-
-
         #AllProducts .false:after {
             margin: 3rem;
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: #94c2d896;
             content: "RENTED";
             font-size: 60px;
             font-weight: 1000;
             position: absolute;
+            color: #093b97a9;
             transform: rotate(300deg);
-            color: rgb(0, 0, 0);
             top: 50;
             left: 50;
             z-index: 5;
             border-radius: 10px;
             padding: 0 20px;
-
         }
 
-
-
         .carsproducts {
-            border: 1px solid gray;
+            border: 1px solid #cccccc;
             height: 600px;
             width: 360px;
             margin: 20px;
@@ -61,36 +58,23 @@
             align-items: center;
             justify-content: space-evenly;
             flex-direction: column;
-            background-color: rgb(199, 199, 199);
+            background-color: #f8f8f8;
             border-radius: 50px;
             text-align: center;
             transition: all 0.4s ease-out;
-
         }
 
         .carsproducts:hover {
-            border-color: blue;
-            background-color: rgb(173, 173, 173);
-
+            border-color: #1976d2;
+            background-color: #eaeff1;
             transition: all 0.2s ease-in;
-            scale: 110%;
-
-
-
-
-
-
-
-
+            transform: scale(1.1);
         }
-
 
         .thumb {
             width: 300px;
             height: auto;
         }
-
-
 
         .carProperties {
             display: flex;
@@ -98,23 +82,18 @@
             align-items: center;
             justify-content: space-between;
             width: 300px;
-
         }
 
         .carbottomdetail {
             background-color: rgba(153, 226, 231, 0.185);
             backdrop-filter: blur(10px);
-
             width: 75px;
             height: 58px;
             margin: 0 2px;
-
             font-size: 12px;
             text-align: center;
             line-height: 10px;
-
         }
-
 
         .carimagediv {
             height: 30%;
@@ -127,30 +106,23 @@
             padding: 1rem 4rem;
             border-radius: 30rem;
             font-size: 1.7rem;
-            color: rgb(3, 0, 0);
-            background-color: rgba(78, 9, 99, 0.158);
+            color: #ffffff;
+            background-color: #1976d2;
             cursor: pointer;
             text-decoration: none;
             transition: all 0.1s ease-in;
             font-weight: 400;
-
-
-
         }
 
         .rentbtn:hover {
             opacity: 0.7;
-            color: white;
-            background-color: rgb(101, 64, 82);
+            color: #ffffff;
+            background-color: #1565c0;
         }
-
-
 
         /* Style the video: 100% width and height to cover the entire window */
         #myVideo {
-
             margin-top: -250px;
-
             height: 150vh;
             z-index: -10000;
         }
@@ -159,10 +131,8 @@
         .contentss {
             position: absolute;
             bottom: 0;
-
-            color: #f1f1f1;
+            color: #ffffff;
             width: 100%;
-
         }
 
         /* Style the button used to pause/play the video */
@@ -188,6 +158,72 @@
         .homevideo {
             z-index: -5000;
         }
+
+
+
+
+/* Genel Stil */
+
+
+.container_footer {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h5 {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-column {
+  flex: 1 1 300px;
+  margin: 20px;
+  text-align: end;
+}
+
+.footer p {
+  color: #888888;
+}
+
+
+
+
+
+.social-media {
+  display: flex;
+  
+}
+
+.social-media ul{
+    display:flex;
+    align-items: end;
+    justify-content: end;
+}
+.social-media li {
+  margin-right: 10px;
+  align-self: flex-end;
+}
+
+.bottom-bar {
+  background-color: #333333;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+
+
     </style>
 
 
@@ -238,28 +274,28 @@
         })
 
 
-       
-auth.onAuthStateChanged(user => {
-    if (user) {
-        console.log('User logged in', user)
 
-        var user1 = auth.currentUser;
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                console.log('User logged in', user)
 
-        if (user1 != null) {
-            var email = user1.email;
-            console.log(email)
-            document.getElementById("userEmailShow").innerHTML = email;
-            document.getElementById("login_logout").innerHTML = "Logout";
+                var user1 = auth.currentUser;
 
-        }
-    } else {
-        console.log('User loggod out');
-        document.getElementById("userEmailShow").innerHTML = "Hello Guess"
-        document.getElementById("login_logout").innerHTML = "Login";
-        document.getElementById("rentBtn").style.pointerEvents = "none";
-        
-    }
-});
+                if (user1 != null) {
+                    var email = user1.email;
+                    console.log(email)
+                    document.getElementById("userEmailShow").innerHTML = email;
+                    document.getElementById("login_logout").innerHTML = "Logout";
+
+                }
+            } else {
+                console.log('User loggod out');
+                document.getElementById("userEmailShow").innerHTML = "Hello Guess"
+                document.getElementById("login_logout").innerHTML = "Login";
+                document.getElementById("rentBtn").style.pointerEvents = "none";
+
+            }
+        });
 
 
 
@@ -287,7 +323,7 @@ auth.onAuthStateChanged(user => {
 
         <nav class="header">
             <div class="login_icon">
-                <a href="index_beta.html">
+                <a href="index.html">
 
                     <img src="/images/rent-car-low-resolution-logo-color-on-transparent-background.png" alt="">
                 </a>
@@ -302,10 +338,10 @@ auth.onAuthStateChanged(user => {
                     <a href="#HOME">HOME</a>
                 </li>
                 <li>
-                    <a href="about.html">about</a>
+                    <a href="#AllProducts">cars</a>
                 </li>
                 <li>
-                    <a href="#AllProducts">cars</a>
+                    <a href="#about">about</a>
                 </li>
                 <li>
                     <a href="gallery.html">shows</a>
@@ -468,10 +504,7 @@ auth.onAuthStateChanged(user => {
     <div style="padding: 7%;display: flex; flex-wrap: wrap;  height: auto; justify-content: space-around;"
         class="container" id="AllProducts">
 
-
-
-
-<!--
+        <!--
 
     <div class="carsproducts false" id="carsproducts">
         <div class="carnameDiv">
@@ -505,22 +538,43 @@ auth.onAuthStateChanged(user => {
         </div>
         
     -->
-        
-        
-
-
-
-
-
-
-
-
 
 
     </div>
 
 
-
+    <div id="about" class="container_footer">
+        <footer class="footer">
+            <div class="container">
+              <div class="footer-row">
+                <div class="footer-column">
+                  <h5>About Us</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu risus ac lacus bibendum tincidunt eget eu velit. Curabitur sed nisi sit amet nibh tempus dictum vel at odio.</p>
+                </div>
+                <div class="footer-column">
+                  <h5>Contact Us</h5>
+                  <ul>
+                    <li>123 Street, City</li>
+                    <li>Phone: 123-456-7890</li>
+                    <li>Email: info@example.com</li>
+                  </ul>
+                </div>
+                <div class="footer-column">
+                  <h5>Follow Us</h5>
+                  <ul class="social-media">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-bar">
+              <p>&copy; 2023 Car Rental Website. All rights reserved.</p>
+            </div>
+          </footer>
+        
+    </div>
 
 
 
@@ -541,7 +595,6 @@ auth.onAuthStateChanged(user => {
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-
 
 
 
