@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rent Car</title>
 
+
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -25,137 +27,7 @@
 
 
     <style>
-        #AllProducts .false {
-            position: relative;
-            background-color: #ff7f7f4d;
-            opacity: 0.9;
-        }
-
-        #AllProducts .false:after {
-            margin: 3rem;
-            background-color: #94c2d896;
-            content: "RENTED";
-            font-size: 60px;
-            font-weight: 1000;
-            position: absolute;
-            color: #093b97a9;
-            transform: rotate(300deg);
-            top: 50;
-            left: 50;
-            z-index: 5;
-            border-radius: 10px;
-            padding: 0 20px;
-        }
-
-        .carsproducts {
-            border: 1px solid #cccccc;
-            height: 600px;
-            width: 360px;
-            margin: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            flex-direction: column;
-            background-color: #f8f8f8;
-            border-radius: 50px;
-            text-align: center;
-            transition: all 0.4s ease-out;
-        }
-
-        .carsproducts:hover {
-            border-color: #1976d2;
-            background-color: #eaeff1;
-            transition: all 0.2s ease-in;
-            transform: scale(1.1);
-        }
-
-        .thumb {
-            width: 300px;
-            height: auto;
-        }
-
-        .carProperties {
-            display: flex;
-            text-align: center;
-            align-items: center;
-            justify-content: space-between;
-            width: 300px;
-        }
-
-        .carbottomdetail {
-            background-color: rgba(153, 226, 231, 0.185);
-            backdrop-filter: blur(10px);
-            width: 75px;
-            height: 58px;
-            margin: 0 2px;
-            font-size: 12px;
-            text-align: center;
-            line-height: 10px;
-        }
-
-        .carimagediv {
-            height: 30%;
-            display: flex;
-            align-items: center;
-        }
-
-        .rentbtn {
-            display: inline-block;
-            padding: 1rem 4rem;
-            border-radius: 30rem;
-            font-size: 1.7rem;
-            color: #ffffff;
-            background-color: #1976d2;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.1s ease-in;
-            font-weight: 400;
-        }
-
-        .rentbtn:hover {
-            opacity: 0.7;
-            color: #ffffff;
-            background-color: #1565c0;
-        }
-
-        /* Style the video: 100% width and height to cover the entire window */
-        #myVideo {
-            margin-top: -250px;
-            height: 150vh;
-            z-index: -10000;
-        }
-
-        /* Add some content at the bottom of the video/page */
-        .contentss {
-            position: absolute;
-            bottom: 0;
-            color: #ffffff;
-            width: 100%;
-        }
-
-        /* Style the button used to pause/play the video */
-        #myBtn {
-            width: 70px;
-            height: 70px;
-            font-size: 30px;
-            padding: 10px;
-            border: none;
-            background: transparent;
-            color: slateblue;
-            cursor: pointer;
-            margin-left: 20px;
-            border-radius: 30px;
-            z-index: 500;
-        }
-
-        #myBtn:hover {
-            background: #ddd;
-            color: black;
-        }
-
-        .homevideo {
-            z-index: -5000;
-        }
+       
     </style>
 
 
@@ -218,6 +90,7 @@
                     console.log(email)
                     document.getElementById("userEmailShow").innerHTML = email;
                     document.getElementById("login_logout").innerHTML = "Logout";
+                    
 
                 }
             } else {
@@ -262,7 +135,11 @@
 
             </div>
 
-            <a class="user-loggedin" id="userEmailShow"></a>
+
+            <div class="header_username">
+                <p>Welcome</p>
+                <a class="user-loggedin" id="userEmailShow"></a>
+            </div>
 
 
             <ul class="header_menu">
@@ -270,14 +147,12 @@
                     <a href="#HOME">HOME</a>
                 </li>
                 <li>
-                    <a href="about.html">about</a>
-                </li>
-                <li>
                     <a href="#AllProducts">cars</a>
                 </li>
                 <li>
-                    <a href="gallery.html">shows</a>
+                    <a href="#about">about</a>
                 </li>
+                
             </ul>
         </nav>
 
@@ -300,7 +175,7 @@
 
 
         <div class="content">
-            <h3>Express Home Delivery</h3>
+            <h3>Cars that make you feel at home</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est explicabo velit quidem maxime, quibusdam
                 repellat ipsum corporis quisquam pariatur totam delectus asperiores odio alias inventore ullam. Est sit
                 nostrum nobis. </p>
@@ -314,18 +189,14 @@
                 <source src="/images/videos/480Untitled video - Made with Clipchamp.mp4" type="video/mp4">
             </video>
 
-            <!-- Optional: some overlay text to describe the video -->
-            <div class="contentss">
-
-                <button id="myBtn" onclick="myFunction()"><i class="fa-solid fa-play"></i></button>
-            </div>
+          
 
         </div>
 
     </section>
 
 
-
+ 
 
     <div class="slider">
 
@@ -340,7 +211,7 @@
                 </div>
 
                 <div class="slide_goto">
-                    <h2 class="btn">Rent</h2>
+                    <h2 class="btn"><a href="#AllProducts">Rent</a></h2>
 
                 </div>
             </div>
@@ -359,7 +230,7 @@
                 </div>
 
                 <div class="slide_goto">
-                    <h2 style="z-index: 50;" class="btn">Rent</h2>
+                    <h2 style="z-index: 50;" class="btn"><a href="#AllProducts">Rent</a></h2>
 
                 </div>
             </div>
@@ -379,7 +250,7 @@
                 </section>
 
                 <section class="slide_goto">
-                    <a href="" class="btn">Rent</a>
+                    <h2 style="z-index: 50;" class="btn"><a href="#AllProducts">Rent</a></h2>
 
                 </section>
             </div>
@@ -399,7 +270,7 @@
                 </div>
 
                 <div class="slide_goto">
-                    <h2 class="btn">Rent</h2>
+                    <h2 class="btn"><a href="#AllProducts">Rent</a></h2>
 
                 </div>
             </div>
@@ -420,7 +291,7 @@
                 </div>
 
                 <div class="slide_goto">
-                    <h2 class="btn">Rent</h2>
+                    <h2 class="btn"><a href="#AllProducts">Rent</a></h2>
 
                 </div>
             </div>
@@ -433,9 +304,16 @@
 
     </div>
 
+<div style="width: 100%; background-color: rgba(228, 99, 48, 0.651); height: 100px; margin-bottom: -50px; padding: 0;">
+
+    <h1 style="text-align: center; line-height: 2.5; font-weight: 900; font-size: 40px;  margin-top: 20px;">ALL PRODUCTS</h1>
+</div>
+
     <div style="padding: 7%;display: flex; flex-wrap: wrap;  height: auto; justify-content: space-around;"
         class="container" id="AllProducts">
 
+
+       
 
 
 
@@ -491,6 +369,43 @@
 
 
 
+
+
+    <div id="about" class="container_footer">
+        <footer class="footer">
+            <div class="container">
+              <div class="footer-row">
+                <div class="footer-column">
+                  <h5>About Us</h5>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Recusandae fugiat at, minus a praesentium dolorum reprehenderit hic doloribus, 
+                    quas atque repudiandae dolore architecto soluta sit doloremque? 
+                    Fugiat, asperiores vel! Officiis!.</p>
+                </div>
+                <div class="footer-column">
+                  <h5>Contact Us</h5>
+                  <ul>
+                    <li>123 Street, City</li>
+                    <li>Phone: 123-456-7890</li>
+                    <li>Email: info@example.com</li>
+                  </ul>
+                </div>
+                <div class="footer-column">
+                  <h5>Follow Us</h5>
+                  <ul class="social-media">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-bar">
+              <p>&copy; 2023 Car Rental Website. All rights reserved.</p>
+            </div>
+          </footer>
+        
+    </div>
 
 
 

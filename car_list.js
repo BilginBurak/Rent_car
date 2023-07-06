@@ -81,7 +81,7 @@ $("body").on("click", ".removeBtn", function () {
     var $keyc = $(this).data("keyc");
     //alert("Are you sure you want to delete the tool?");
 
-    var answer = window.confirm("Are you sure you want to delete the tool?" + $keyc);
+    var answer = window.confirm("Are you sure you want to delete the tool? Car ID: " + $keyc);
     if (answer) {
         //database.ref('/Cars/' + $key).remove();
         remove(ref(database, 'Cars/' + $keyc));

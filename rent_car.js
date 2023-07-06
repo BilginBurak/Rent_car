@@ -100,26 +100,15 @@ var priceFinal = document.getElementById('priceFinal').textContent;
 clearForm.addEventListener('click', (e) => {
 
 
-    console.log(firstName)
-    console.log(lastName)
-    console.log(phone)
-    console.log(email)
-    console.log(age)
-    console.log(license)
-    console.log(TCKN)
-    console.log(adress)
-    console.log(priceFinal)
-    console.log(license)
-    // if (firstName == "" || lastName == "" || phone == "" || adress == "" || email == "" || age == "" || license == "" || TCKN == "")
-    if (lastName ==null)
-    alert("Please control form element");
-    
-    else{
-        
-        if (priceFinal == null)
-        alert("gün seç")
+    document.getElementById('firstNametxt').value ="";
+    const lastName = document.getElementById('lastNametxt').value = "";
+    const phone = document.getElementById('formPhone').value = "";
+    var email = document.getElementById('formEmail').value = "";
+    const age = document.getElementById('formAge').value = "";
+    const license = document.getElementById('formLicense').value = "";
+    const TCKN = document.getElementById('TCKN').value = "";
+    const adress = document.getElementById('formAdress').value = "";
 
-    }
     
 
 
@@ -128,14 +117,14 @@ clearForm.addEventListener('click', (e) => {
 
 btnRent.addEventListener('click', (e) => {
 
-var firstName = document.getElementById('firstNametxt').value;
-const lastName = document.getElementById('lastNametxt').value;
-const phone = document.getElementById('formPhone').value;
-var email = document.getElementById('formEmail').value;
-const age = document.getElementById('formAge').value;
-const license = document.getElementById('formLicense').value;
-const TCKN = document.getElementById('TCKN').value;
-const adress = document.getElementById('formAdress').value;
+    var firstName = document.getElementById('firstNametxt').value;
+    const lastName = document.getElementById('lastNametxt').value;
+    const phone = document.getElementById('formPhone').value;
+    var email = document.getElementById('formEmail').value;
+    const age = document.getElementById('formAge').value;
+    const license = document.getElementById('formLicense').value;
+    const TCKN = document.getElementById('TCKN').value;
+    const adress = document.getElementById('formAdress').value;
 
 
 

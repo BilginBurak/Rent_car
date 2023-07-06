@@ -189,7 +189,7 @@ addCarbtnAdd.addEventListener('click', (e) => {
             fuelType: fuelType,
             licenseType: licenseType,
             capacity: capacity,
-            active:false,
+            active:true,
             gearType: gearType
 
         });
@@ -330,7 +330,7 @@ updateCarbtnGet.addEventListener('click', (e) => {
 
     });
 
-    alert("Car' data fetched");
+    
 
 
 
